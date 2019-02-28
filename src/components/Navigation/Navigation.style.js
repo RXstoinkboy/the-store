@@ -6,17 +6,17 @@ const PosedWrapper = posed.div({
         x: '-90%',
         transition: {
             type: 'spring',
-            stiffness: 500,
+            stiffness: 300,
             damping: 25
-        }
+        },
     },
     open:{
         x: '0',
         transition: {
             type: 'spring',
-            stiffness: 400,
+            stiffness: 300,
             damping: 30
-        }
+        },
     }
 })
 
@@ -35,6 +35,14 @@ export const Logo = styled.img`
     top: 2rem;
     height: 8rem;
     margin-left: 10vw;
+
+    @media all and (max-width: 850px) and (orientation: landscape){
+        display: none;
+    }
+    @media all and (max-width: 400px) and (orientation: portrait){
+        margin-left: 3vw;
+        height: 7rem
+    }
 `
 
 // menu button
@@ -56,7 +64,7 @@ export const Button = styled(PosedButton)`
     right: 0;
     top: 0;
     bottom: 0;
-    width: 10%;
+    width: 5vw;
     border: none;
     background: white;
     box-shadow: 0 0 .3rem hsla(0deg, 0%, 90%, 1);
@@ -75,10 +83,14 @@ export const Button = styled(PosedButton)`
         box-shadow: 0 0 1rem hsla(0deg, 0%, 60%, 1);
         transform: scale(1.04);
     }
+
+    @media all and (max-width: 400px) and (orientation: portrait){
+        justify-content: flex-start;
+    }
 `
 
 export const Bar = styled.div`
-    width: 40px;
+    width: 3vw;
     height: 6px;
     border-radius: 3px;
     margin: 4px;
@@ -87,7 +99,8 @@ export const Bar = styled.div`
 
 const PosedNavLinks = posed.ul({
     open:{
-        staggerChildren: 50
+        delayChildren: 50,
+        staggerChildren: 30
     }
 })
 
@@ -96,17 +109,20 @@ export const NavLinks = styled(PosedNavLinks)`
     width: 50%;
     padding: 0;
     margin-left: 10vw;
+
+    @media all and (max-width: 400px) and (orientation: portrait){
+        width: 80%;
+        margin-left: 3vw;
+    }
 `
 
 const PosedNavItem = posed.li({
     closed:{
-        y: '100px',
         opacity: 0
     },
     open: {
-        y: '0',
         opacity: 1
-    }
+    },
 })
 
 export const NavItem = styled(PosedNavItem)`
@@ -119,6 +135,10 @@ export const NavItem = styled(PosedNavItem)`
 
     &:hover{
         color: var(--mainPink);
+    }
+
+    @media all and (max-width: 850px){
+        font-size: 2rem;
     }
 `
 
@@ -140,6 +160,10 @@ export const MediaWrapper = styled(PosedMediaWrapper)`
     margin-left: 10vw;
     height: 2rem;
 
+    @media all and (max-width: 850px){
+        bottom: 1rem;
+        height: 1.5rem;
+    }
 `
 
 export const Img = styled.svg`
@@ -151,5 +175,11 @@ export const Img = styled.svg`
 
     &:hover{
         color: var(--mainPink);
+    }
+    @media all and (max-width: 850px) and (orientation: landscape){
+        display: none;
+    }
+    @media all and (max-width: 450px) and (orientation: portrait){
+        display: none;
     }
 `
