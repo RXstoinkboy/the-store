@@ -26,10 +26,12 @@ export const Wrapper = styled(PosedWrapper)`
     bottom: 0;
     left: 0;
     width: 50%;
+    z-index: 100;
     background: white;
     display: flex;
     align-items: center;
 `
+
 export const Logo = styled.img`
     position: absolute;
     top: 2rem;
@@ -182,4 +184,17 @@ export const Img = styled.svg`
     @media all and (max-width: 450px) and (orientation: portrait){
         display: none;
     }
+`
+const PosedShade = posed.div({
+    open: { opacity: .85 },
+    closed: { opacity: 0 }
+  });
+
+export const Shade = styled(PosedShade)`
+    position: absolute;
+    background: black;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 `
