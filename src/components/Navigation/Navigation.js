@@ -5,7 +5,9 @@ import {Link} from 'react-router-dom';
 import {PoseGroup} from 'react-pose';
 
 class Navigation extends Component {
-    state={open: false}
+    state={
+        open: false
+    }
 
     handleClick=()=>{
         this.setState({

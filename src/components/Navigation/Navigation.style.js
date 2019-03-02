@@ -41,7 +41,7 @@ export const Logo = styled.img`
     @media all and (max-width: 850px) and (orientation: landscape){
         display: none;
     }
-    @media all and (max-width: 400px) and (orientation: portrait){
+    @media all and (max-width: 450px) and (orientation: portrait){
         margin-left: 3vw;
         height: 7rem
     }
@@ -76,6 +76,7 @@ export const Button = styled(PosedButton)`
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transform: translateX(0);
 
     &:focus{
         outline: none;
@@ -86,8 +87,9 @@ export const Button = styled(PosedButton)`
         transform: scale(1.04);
     }
 
-    @media all and (max-width: 400px) and (orientation: portrait){
-        justify-content: flex-start;
+    @media all and (max-width: 450px) and (orientation: portrait){
+        right: -5vw;
+        width: 10vw
     }
 `
 
@@ -97,6 +99,10 @@ export const Bar = styled.div`
     border-radius: 3px;
     margin: 4px;
     background: black;
+
+    @media all and (max-width: 450px) and (orientation: portrait){
+        width: 6vw
+    }
 `
 
 const PosedNavLinks = posed.ul({
@@ -112,7 +118,7 @@ export const NavLinks = styled(PosedNavLinks)`
     padding: 0;
     margin-left: 10vw;
 
-    @media all and (max-width: 400px) and (orientation: portrait){
+    @media all and (max-width: 450px) and (orientation: portrait){
         width: 80%;
         margin-left: 3vw;
     }
@@ -148,29 +154,31 @@ export const NavItem = styled(PosedNavItem)`
 const PosedMediaWrapper = posed.div({
     closed: {
         rotate: -90,
-        x: '36.2vw',
+        x: '36.3vw',
         originX: '0%',
+        bottom: '0rem'
     },  
     open: {
         rotate: 0,
-        x: '0'
+        x: '0',
+        bottom: '4rem'
     }
 })
 export const MediaWrapper = styled(PosedMediaWrapper)`
     position: absolute;
-    bottom: 4rem;
     margin-left: 10vw;
+    
     height: 2rem;
 
     @media all and (max-width: 850px){
-        bottom: 1rem;
-        height: 1.5rem;
+        bottom: .5rem;
+        height: 1.2rem;
     }
 `
 
 export const Img = styled.svg`
     height: 100%;
-    margin-right: 1.5rem;
+    margin-right: 1rem;
     cursor: pointer;
     color: black;
     transition: all .3s ease;

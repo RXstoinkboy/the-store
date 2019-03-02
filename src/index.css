@@ -8,6 +8,9 @@ body {
 
 :root{
   --mainPink: hsla(0deg, 50%, 85%, 1);
+  --mainGreen: green;
+  --mainBlue: blue;
+  --mainYellow: yellow;
 }
 
 a {

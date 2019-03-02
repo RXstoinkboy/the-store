@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import {Wrapper, Container} from './Shop.style.js'
 
 class Shop extends Component {
     render() {
         return (
-            <div style={{width: '100vw', height: '100vh', background: 'green'}}>
-                hello from Shop
-            </div>
+            <Wrapper>
+                <Container color='var(--mainPink)'/>
+                <Container color='var(--mainBlue)'/>
+                <Container color='var(--mainYellow)'/>
+                <Container color='var(--mainGreen)'/>
+            </Wrapper>
         );
     }
 }
