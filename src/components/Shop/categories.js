@@ -8,18 +8,22 @@ const categories = {
     sneakers: {
         img: blackSneakers,
         name: 'sneakers',
+        link: 'sneakers'
     },
     boots: {
         img: brownBag,
         name: 'bags',
+        link: 'bags'
     },
     heels: {
         img: yellowBoots,
         name: 'boots',
+        link: 'boots'
     },
     bags: {
         img: pinkShoes,
         name: `women's shoes`,
+        link: 'womenshoes'
     },
 }
 

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Wrapper, Button, NavLinks,NavItem, Bar, MediaWrapper, Img, Logo, Shade} from './Navigation.style';
 import logo from '../../images/logo.png';
 import {Link} from 'react-router-dom';
-import {PoseGroup} from 'react-pose';
 
 class Navigation extends Component {
     state={
@@ -34,19 +33,16 @@ class Navigation extends Component {
                         <Bar />
                     </Button>
                     <NavLinks>
-                        {/* <Link to='/'>
-                            <NavItem>Home</NavItem>
-                        </Link> */}
-                        <Link to='about'>
+                        <Link to='/about'>
                             <NavItem>About</NavItem>
                         </Link>
-                        <Link to='shop'>
+                        <Link to='/shop'>
                             <NavItem>Shop</NavItem>
                         </Link>
-                        <Link to='cart'>
+                        <Link to='/cart'>
                             <NavItem>Cart</NavItem>
                         </Link>
-                        <Link to='contact'>
+                        <Link to='/contact'>
                             <NavItem>Contact</NavItem>
                         </Link>
                     </NavLinks>

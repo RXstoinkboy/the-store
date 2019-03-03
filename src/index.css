@@ -11,6 +11,10 @@ body {
   --mainGreen: hsl(120, 50%, 85%);
   --mainBlue: hsl(192, 50%, 80%);
   --mainYellow: hsl(59, 50%, 80%);
+  --mainBlack: hsla(0, 0%, 0%, 0.5);
+  --mainGrey: hsla(0, 0%, 50%, 0.5);
+  --mainRed: rgba(255, 0, 0, 0.3);
+  --mainWhite: hsl(0, 0%, 90%);
 }
 
 a {

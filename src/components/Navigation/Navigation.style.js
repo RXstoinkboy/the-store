@@ -7,7 +7,7 @@ const PosedWrapper = posed.div({
         transition: {
             type: 'spring',
             stiffness: 300,
-            damping: 25
+            damping: 35
         },
     },
     open:{
@@ -205,4 +205,5 @@ export const Shade = styled(PosedShade)`
     left: 0;
     right: 0;
     bottom: 0;
+    z-index:90;
 `

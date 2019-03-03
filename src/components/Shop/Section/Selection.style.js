@@ -2,19 +2,11 @@ import styled from 'styled-components';
 import posed from 'react-pose';
 
 export const Wrapper = styled.div`
-    padding-left: 5vw;
-    width: 100%;
-    background: green;
+    grid-column: 2/-1;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-
-    @media all and (min-width: 1200px){
-        grid-template-columns: 1fr 1fr;
-    }
-
-    @media all and (max-width: 450px){
-        grid-template-columns: 1fr;
-    }
+    grid-template-columns: 1fr;
+    overflow-y: scroll;
+    height: 90vh;
 `
 
 const PosedContainer = posed.div({
@@ -80,24 +72,6 @@ export const Img = styled.img`
         grid-column: 1/-1;
     }
 `
-
 export const Name = styled.h3`
-    grid-row: 2/3;
-    font-size: 2.5rem;
-    margin: 0;
-    text-transform: capitalize;
-    text-align: center;
-    color: white;
-    text-shadow: 0 0 15px hsla(0, 0%, 60%, 1);
 
-    @media all and (max-width: 850px){
-        grid-row: 1/-1;
-        grid-column: 2/3;
-    }
-
-    @media all and (max-width: 500px){
-        grid-row: 2/3;
-        grid-column: 1/-1;
-        font-size: 1.7rem;
-    }
 `
