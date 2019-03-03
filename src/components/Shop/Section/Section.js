@@ -5,12 +5,15 @@ import Selection from './Selection';
 import {Wrapper} from './Section.style';
 import {Title} from '../Shop.style';
 import sneakers from './sneakers';
+import boots from './boots';
+import heels from './heels';
+import bags from './bags';
 
 class Section extends Component {
     state = {
         pathname: window.location.pathname,
         title: '',
-        items: sneakers,
+        items: {},
         currentHover: {}
     }
 
@@ -38,8 +41,25 @@ class Section extends Component {
                     return pathname;
             }
         }
+
+        const selectCurrentItems =()=>{
+            switch(pathname){
+                case '/shop/sneakers':
+                    return sneakers;
+                case '/shop/boots':
+                    return boots;
+                case '/shop/bags':
+                    return bags;
+                case '/shop/womenshoes':
+                    return heels;
+                default:
+                    return pathname;
+            }
+        }
+
         this.setState({
-            title: selectTitle()
+            title: selectTitle(),
+            items: selectCurrentItems()
         })
     }
 
