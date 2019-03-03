@@ -1,17 +1,27 @@
-import React, { Component } from 'react';
-import {Wrapper, Container} from './Shop.style.js'
+import React, { Component, Fragment } from 'react';
+import {Wrapper, Container, Title, Img, Name} from './Shop.style.js';
+import categories from './categories';
 
 class Shop extends Component {
     render() {
+        const colors = ['var(--mainPink)', 'var(--mainYellow)', 'var(--mainBlue)', 'var(--mainGreen)'];
         return (
-            <Wrapper>
-                <Container color='var(--mainPink)'/>
-                <Container color='var(--mainBlue)'/>
-                <Container color='var(--mainYellow)'/>
-                <Container color='var(--mainGreen)'/>
-            </Wrapper>
+            <Fragment>
+                <Title>Categories</Title>
+                <Wrapper>
+                    {Object.keys(categories).map((item, index) => {
+                        return (
+                            <Container color={colors[index]} key={index}>
+                                <Img src={categories[item].img}/>
+                                <Name>{categories[item].name}</Name>
+                            </Container>
+                        )
+                    })}
+                </Wrapper>
+            </Fragment>
         );
     }
 }
 
 export default Shop;
+

@@ -7,10 +7,10 @@ body {
 }
 
 :root{
-  --mainPink: hsla(0deg, 50%, 85%, 1);
-  --mainGreen: green;
-  --mainBlue: blue;
-  --mainYellow: yellow;
+  --mainPink: hsla(0, 50%, 85%, 1);
+  --mainGreen: hsl(120, 50%, 85%);
+  --mainBlue: hsl(192, 50%, 80%);
+  --mainYellow: hsl(59, 50%, 80%);
 }
 
 a {
