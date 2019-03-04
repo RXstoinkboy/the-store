@@ -4,6 +4,7 @@ import posed from 'react-pose';
 export const Wrapper = styled.div`
     padding-left: 5vw;
     width: 100%;
+    height: 100vh;
     background: green;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -44,7 +45,7 @@ export const Container = styled(PosedContainer)`
     }
 
     @media all and (max-width: 500px){
-        height: 25vh;
+        height: 90vh;
         grid-template-rows: 4fr 1fr;
         grid-template-columns: 1fr;
     }
@@ -53,17 +54,12 @@ export const Container = styled(PosedContainer)`
 export const Title = styled.h1`
     color: white;
     text-shadow: 0 0 20px hsla(0, 0%, 60%, 1);
-    padding-left: 5vw;
+    padding: 0 0 0 5vw;
     height: 10vh;
-    font-size: 5rem;
+    font-size: 8vh;
     text-align: center;
     text-transform: capitalize;
-    margin:0;
-
-    @media all and (max-width: 500px){
-        font-size: 3rem;
-        height: 3rem;
-    }
+    margin: 0;
 `
 
 export const Img = styled.img`

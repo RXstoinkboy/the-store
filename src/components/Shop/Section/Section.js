@@ -56,23 +56,25 @@ class Section extends Component {
                     return pathname;
             }
         }
+        const startItem = Object.keys(selectCurrentItems())[0];
 
         this.setState({
             title: selectTitle(),
-            items: selectCurrentItems()
+            items: selectCurrentItems(),
+            currentHover: (selectCurrentItems())[startItem]
         })
     }
 
     render() {
         const {pathname, title} = this.state;
         return (
-            <React.Fragment>
+            <div style={{height: '100vh'}}>
                 <Title>{title}</Title>
                 <Wrapper>
                     <Display pathname={pathname} currentHover={this.state.currentHover}/>
                     <Selection pathname={pathname} handleMouseEnter={this.handleMouseEnter} items={this.state.items}/>
                 </Wrapper>
-            </React.Fragment>
+            </div>
         );
     }
 }

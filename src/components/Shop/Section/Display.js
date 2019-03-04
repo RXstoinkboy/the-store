@@ -3,7 +3,7 @@ import {Wrapper, Img} from './Display.style';
 
 const Display = props => {
     return (
-        <Wrapper>
+        <Wrapper color={props.currentHover.color}>
             <Img src={props.currentHover.img} />
         </Wrapper>
     );

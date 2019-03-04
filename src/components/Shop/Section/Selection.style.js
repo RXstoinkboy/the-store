@@ -7,6 +7,13 @@ export const Wrapper = styled.div`
     grid-template-columns: 1fr;
     overflow-y: scroll;
     height: 90vh;
+
+    @media all and (orientation: portrait) and (max-width: 450px){
+        grid-column: 1/2;
+        grid-row: 2/3;
+        grid-template-columns: repeat(6, 1fr);
+        height:100%;
+    }
 `
 
 const PosedContainer = posed.div({
@@ -28,50 +35,38 @@ export const Container = styled(PosedContainer)`
     align-items: center;
     justify-items: center;
     cursor: pointer;
+    max-width: 400px;
+    
 
     @media all and (max-width: 850px){
         height: 25vh;
+        max-height: 250px;
         grid-template-rows: 1fr;
-        grid-template-columns: 1fr 1fr;
     }
 
-    @media all and (max-width: 500px){
-        height: 25vh;
+    @media all and (orientation: portrait) and (max-width: 450px){
+        height: auto;
+        width: 40vw;
         grid-template-rows: 4fr 1fr;
-        grid-template-columns: 1fr;
-    }
-`
-
-export const Title = styled.h1`
-    color: white;
-    text-shadow: 0 0 20px hsla(0, 0%, 60%, 1);
-    padding-left: 5vw;
-    height: 10vh;
-    font-size: 5rem;
-    text-align: center;
-    text-transform: capitalize;
-    margin:0;
-
-    @media all and (max-width: 500px){
-        font-size: 3rem;
-        height: 3rem;
     }
 `
 
 export const Img = styled.img`
     grid-row: 1/2;
-    height: 70%;
-
-    @media all and (max-width: 850px){
-        grid-row: 1/-1;
-        grid-column: 1/2;
-    }
-
-    @media all and (max-width: 500px){
-        grid-row: 1/2;
-        grid-column: 1/-1;
-    }
+    max-height: 90%;
+    max-width: 90%;
 `
 export const Name = styled.h3`
+    color: white;
+    grid-row: 2/3;
+    text-shadow: 0 0 20px hsla(0, 0%, 60%, 1);
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    margin:0;
+    text-align: center;
 
+    @media all and (max-width: 500px){
+        font-size: 1rem;
+        height: 2rem;
+    }
 `

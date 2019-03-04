@@ -15,6 +15,7 @@ body {
   --mainGrey: hsla(0, 0%, 50%, 0.5);
   --mainRed: rgba(255, 0, 0, 0.3);
   --mainWhite: hsl(0, 0%, 90%);
+  --mainBrown: hsla(29, 68%, 27%, 0.616);
 }
 
 a {

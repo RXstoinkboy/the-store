@@ -13,9 +13,17 @@ const Selection = props => {
                             height='30vh' 
                             color={items[item].color} 
                             onMouseEnter={handleMouseEnter}
-                            id={items[item].id}>
-                            <Img src={items[item].img} id={items[item].id}/>
-                            <Name id={items[item].id}>{items[item].name}</Name>
+                            id={items[item].id}
+                                >
+                            <Img 
+                                src={items[item].img} 
+                                id={items[item].id}/>
+                            <Name 
+                                id={items[item].id}
+                                color={items[item].color}
+                                >
+                                {items[item].name}
+                            </Name>
                         </Container>
                     )
                 })
