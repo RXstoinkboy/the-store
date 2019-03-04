@@ -4,7 +4,7 @@ import posed from 'react-pose';
 export const Wrapper = styled.div`
     padding-left: 5vw;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     background: green;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
