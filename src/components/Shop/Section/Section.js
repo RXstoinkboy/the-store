@@ -25,11 +25,9 @@ class Section extends Component {
 
     componentDidMount(){
         const {pathname} = this.state;
-        console.log(pathname);
         const selectTitle = () => {
             switch(pathname){
                 case '/shop/sneakers':
-                console.log('sneakers');
                     return 'sneakers';
                 case '/shop/boots':
                     return 'boots';

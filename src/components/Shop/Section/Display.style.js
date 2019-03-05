@@ -28,7 +28,7 @@ export const Img = styled.img`
 export const Controls = styled.div`
     display: flex;
     width: 100%;
-    grid-column: 1/-1;
+    height: 50%;
     justify-content: center;
     align-items: center;
 `
@@ -57,4 +57,31 @@ export const Button = styled(PosedButton)`
     &:hover{
         background: linear-gradient(135deg, hsla(222, 50%, 80%, .3), hsla(100, 50%, 80%, .4));
     }
+`
+
+export const Info = styled.div`
+    display: flex;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+`
+
+export const Name = styled.h2`
+
+`
+
+export const Price = styled.h3`
+
+`
+
+export const MoreInfo = styled.svg`
+
+`
+
+export const Details = styled.div`
+    grid-column: 1/-1;
+    grid-row: 2/-1;
+    width: 100%;
+    height: 100%;
 `
