@@ -12,8 +12,10 @@ const boots = {
         color: 'var(--mainBlack)',
         img: blackBoots,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 950,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
     brownBoots: {
         id: 'brownBoots',
@@ -23,6 +25,8 @@ const boots = {
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
         price: 90,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
     combatBoots: {
         id: 'combatBoots',
@@ -30,8 +34,10 @@ const boots = {
         color: 'var(--mainGrey)',
         img: combatBoots,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 60,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
     desertBoots: {
         id: 'desertBoots',
@@ -39,8 +45,10 @@ const boots = {
         color: 'var(--mainYellow)',
         img: desertBoots,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 30,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
     greenBoots: {
         id: 'greenBoots',
@@ -48,8 +56,10 @@ const boots = {
         color: 'var(--mainGreen)',
         img: greenBoots,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 15,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
     yellowBoots: {
         id: 'yellowBoots',
@@ -57,8 +67,10 @@ const boots = {
         color: 'var(--mainYellow)',
         img: yellowBoots,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 70,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
 }
 

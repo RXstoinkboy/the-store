@@ -167,7 +167,6 @@ const PosedMediaWrapper = posed.div({
 export const MediaWrapper = styled(PosedMediaWrapper)`
     position: absolute;
     margin-left: 10vw;
-    
     height: 2rem;
 
     @media all and (max-width: 850px){
@@ -206,4 +205,35 @@ export const Shade = styled(PosedShade)`
     right: 0;
     bottom: 0;
     z-index:90;
+`
+
+export const CartWrapper = styled.div`
+    top: .5rem;
+    position: absolute;
+    width: 4vw;
+    transition: all .3s ease;
+
+    @media all and (max-width: 450px) and (orientation: portrait){
+        width: 8vw
+    }
+
+    &:hover{
+        color: var(--mainPink);
+    }
+`
+export const Cart = styled.svg`
+        margin-bottom: 10px;
+`
+
+export const Number = styled.span`
+    display: flex;
+    font-size: 1rem;
+    background: hsla(0, 0%, 20%, .8);
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: auto;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
 `

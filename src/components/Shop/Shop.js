@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from 'react';
-import {Wrapper, Container, Title, Img, Name} from './Shop.style.js';
+import React, { Component } from 'react';
+import {Wrapper, Container, Title, Img, Name, ShopWrapper} from './Shop.style.js';
 import categories from './categories';
 import {Link} from 'react-router-dom';
 
@@ -7,7 +7,7 @@ class Shop extends Component {
     render() {
         const colors = ['var(--mainPink)', 'var(--mainYellow)', 'var(--mainBlue)', 'var(--mainGreen)'];
         return (
-            <Fragment>
+            <ShopWrapper>
                 <Title>Categories</Title>
                 <Wrapper>
                     {Object.keys(categories).map((item, index) => {
@@ -21,7 +21,7 @@ class Shop extends Component {
                         )
                     })}
                 </Wrapper>
-            </Fragment>
+            </ShopWrapper>
         );
     }
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import categories from '../categories';
 import Display from './Display';
 import Selection from './Selection';
-import {Wrapper} from './Section.style';
+import {Wrapper, SectionWrapper} from './Section.style';
 import {Title} from '../Shop.style';
 import sneakers from './sneakers';
 import boots from './boots';
@@ -68,13 +68,13 @@ class Section extends Component {
     render() {
         const {pathname, title} = this.state;
         return (
-            <div style={{height: '100vh'}}>
+            <SectionWrapper>
                 <Title>{title}</Title>
                 <Wrapper>
                     <Display pathname={pathname} currentHover={this.state.currentHover}/>
                     <Selection pathname={pathname} handleMouseEnter={this.handleMouseEnter} items={this.state.items}/>
                 </Wrapper>
-            </div>
+            </SectionWrapper>
         );
     }
 }

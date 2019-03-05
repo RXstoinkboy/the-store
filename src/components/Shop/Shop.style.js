@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import posed from 'react-pose';
 
+export const ShopWrapper = styled.div`
+    background: linear-gradient(135deg, hsla(222, 50%, 80%, .3), hsla(100, 50%, 80%, .4));
+`
+
 export const Wrapper = styled.div`
     padding-left: 5vw;
     width: 100%;
@@ -39,13 +43,13 @@ export const Container = styled(PosedContainer)`
     cursor: pointer;
 
     @media all and (max-width: 850px){
-        height: 25vh;
+        height: 30vh;
         grid-template-rows: 1fr;
         grid-template-columns: 1fr 1fr;
     }
 
     @media all and (max-width: 500px){
-        height: 90vh;
+        height: 30vh;
         grid-template-rows: 4fr 1fr;
         grid-template-columns: 1fr;
     }
@@ -64,7 +68,8 @@ export const Title = styled.h1`
 
 export const Img = styled.img`
     grid-row: 1/2;
-    height: 70%;
+    max-height: 70%;
+    max-width: 100%;
 
     @media all and (max-width: 850px){
         grid-row: 1/-1;

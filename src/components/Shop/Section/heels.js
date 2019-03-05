@@ -12,8 +12,10 @@ const heels = {
         color: 'var(--mainBlack)',
         img: blackShoes,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 80,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
     brownShoes: {
         id: 'brownShoes',
@@ -21,8 +23,10 @@ const heels = {
         color: 'var(--mainBrown)',
         img: brownShoes,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 70,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
     lightPinkShoes: {
         id: 'lightPinkShoes',
@@ -30,8 +34,10 @@ const heels = {
         color: 'var(--mainPink)',
         img: lightPinkShoes,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 30,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
     pinkShoes: {
         id: 'pinkShoes',
@@ -39,8 +45,10 @@ const heels = {
         color: 'var(--mainRed)',
         img: pinkShoes,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 50,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
     whiteShoes: {
         id: 'whiteShoes',
@@ -50,6 +58,8 @@ const heels = {
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
         price: 90,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
     yellowShoes: {
         id: 'yellowShoes',
@@ -57,8 +67,10 @@ const heels = {
         color: 'var(--mainYellow)',
         img: yellowShoes,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 60,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
 }
 

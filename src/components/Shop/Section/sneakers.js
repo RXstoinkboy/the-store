@@ -11,8 +11,10 @@ const sneakers = {
         color: 'var(--mainBlack)',
         img: blackSneakers,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 50,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
     blueSneakers: {
         id: 'blueSneakers',
@@ -20,8 +22,10 @@ const sneakers = {
         color: 'var(--mainBlue)',
         img: blueSneakers,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 80,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
     greySneakers: {
         id: 'greySneakers',
@@ -29,8 +33,10 @@ const sneakers = {
         color: 'var(--mainGrey)',
         img: greySneakers,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 20,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
     redSneakers: {
         id: 'redSneakers',
@@ -38,8 +44,10 @@ const sneakers = {
         color: 'var(--mainRed)',
         img: redSneakers,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 50,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
     whiteSneakers: {
         id: 'whiteSneakers',
@@ -47,8 +55,10 @@ const sneakers = {
         color: 'var(--mainWhite)',
         img: whiteSneakers,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 60,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
 }
 

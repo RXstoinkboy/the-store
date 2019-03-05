@@ -13,8 +13,10 @@ const bags = {
         color: 'var(--mainBrown)',
         img: brownBag,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 300,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
     darkGreyBag: {
         id: 'darkGreyBag',
@@ -24,6 +26,8 @@ const bags = {
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
         price: 90,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
     flowersBag: {
         id: 'flowersBag',
@@ -31,8 +35,10 @@ const bags = {
         color: 'var(--mainRed)',
         img: flowersBag,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 20,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
     greyBag: {
         id: 'greyBag',
@@ -40,8 +46,10 @@ const bags = {
         color: 'var(--mainGrey)',
         img: greyBag,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 70,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
     LVbag: {
         id: 'LVbag',
@@ -49,8 +57,10 @@ const bags = {
         color: 'var(--mainWhite)',
         img: LVbag,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 900,
         amount: 10,
+        ordered: 0,
+        inCart: false,
     },
     redBag: {
         id: 'redBag',
@@ -58,8 +68,10 @@ const bags = {
         color: 'var(--mainRed)',
         img: redBag,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 45,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
     yellowBag: {
         id: 'yellowBag',
@@ -67,8 +79,10 @@ const bags = {
         color: 'var(--mainYellow)',
         img: yellowBag,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 90,
+        price: 200,
         amount: 10,
+        ordered: 0,
+        inCart: false
     },
 }
 

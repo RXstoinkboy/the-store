@@ -5,7 +5,7 @@ import {Container, Img, Name} from './Selection.style';
 const Selection = props => {
     const {items, handleMouseEnter} = props;
     return (
-        <Wrapper>
+        <Wrapper columns={Object.keys(items).length}>
             {
                 Object.keys(items).map(item => {
                     return (
@@ -14,7 +14,9 @@ const Selection = props => {
                             color={items[item].color} 
                             onMouseEnter={handleMouseEnter}
                             id={items[item].id}
-                                >
+                            key={items[item].id}
+                            
+                        >
                             <Img 
                                 src={items[item].img} 
                                 id={items[item].id}/>
