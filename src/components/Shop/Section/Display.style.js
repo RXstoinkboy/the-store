@@ -94,11 +94,13 @@ const PosedMoreInfo = posed.svg({
     hoverable: true,
     init: {
         scale: 1,
-        y: 0
+        y: 0,
+        filter: `drop-shadow(0 3px 15px hsl(0, 0%, 20%)`
     },
     hover: {
         scale: 1.04,
-        y: -2
+        y: -2,
+        filter: `drop-shadow(0 5px 7px hsl(0, 0%, 20%)`
     }
 })
 

@@ -10,7 +10,7 @@ class Cart extends Component {
                 <Title>Cart</Title>
                     <Wrapper>
                         <Item />
-                        <Total>$90</Total>
+                        <Total>Total amount: <span style={{textDecoration:'underline', marginLeft: '1rem'}}>$90</span></Total>
                         <PurchaseButton>BUY NOW</PurchaseButton>
                     </Wrapper>
             </CartWrapper>

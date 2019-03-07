@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Button } from '../Shop/Section/Display.style';
 
 export const Wrapper = styled.div`
     background: transparent;
@@ -19,9 +20,13 @@ export const Wrapper = styled.div`
 `
 
 export const Total = styled.p`
-
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10vw;
+    font-size: 1.5rem;
+    font-weight: bold;
 `
 
-export const PurchaseButton = styled.button`
-
+export const PurchaseButton = styled(Button)`
+margin: 0 10vw 0 auto;
 `
