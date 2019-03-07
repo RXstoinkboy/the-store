@@ -40,12 +40,12 @@ const PosedButton = posed.button({
     init: {
         y: 0,
         scale: 1,
-        boxShadow: '0 0 20px hsl(0, 0%, 30%), 0 6px 10px hsl(0, 0%, 30%)'
+        boxShadow: '0 0 20px hsl(0, 0%, 50%), 0 6px 10px hsl(0, 0%, 50%), inset 0 0 10px hsla(0, 0%, 30%, .5)'
         },
     hover: {
         y: -2,
         scale: 1.01,
-        boxShadow: '0 0 15px hsl(0, 0%, 30%), 0 7px 8px hsl(0, 0%, 30%)'
+        boxShadow: '0 0 15px hsl(0, 0%, 50%), 0 7px 8px hsl(0, 0%, 50%), inset 0 0 10px hsla(0, 0%, 30%, .5)'
     }
 })
 
@@ -57,10 +57,10 @@ export const Button = styled(PosedButton)`
     border-radius: 5px;
     color: white;
     text-transform: uppercase;
+    text-shadow: 0 1px 4px hsl(0, 0%, 0%);
     cursor: pointer;
     transition: all .3s ease;
     
-
     &:focus{
         outline: none;
     }

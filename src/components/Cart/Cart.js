@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
+import {ShopWrapper as CartWrapper, Title} from '../Shop/Shop.style';
+import Item from './Item';
+import {Wrapper, Total, PurchaseButton} from './Cart.style'
 
 class Cart extends Component {
     render() {
         return (
-            <div style={{width: '100vw', height: '100vh', background: 'yellow'}}>
-                hello from cart
-            </div>
+            <CartWrapper>
+                <Title>Cart</Title>
+                    <Wrapper>
+                        <Item />
+                        <Total>$90</Total>
+                        <PurchaseButton>BUY NOW</PurchaseButton>
+                    </Wrapper>
+            </CartWrapper>
         );
     }
 }
