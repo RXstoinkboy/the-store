@@ -14,12 +14,17 @@ class Section extends Component {
         pathname: window.location.pathname,
         title: '',
         items: {},
-        currentHover: {}
+        currentHover: {},
+        modalOpened: false
     }
 
     handleMouseEnter =e=>{
-        this.setState({
-            currentHover: this.state.items[e.target.id]
+        this.setState({currentHover: this.state.items[e.target.id]})
+    }
+
+    openModal =()=>{
+        this.setState(prevState=>{
+            return {modalOpened: !prevState.modalOpened}
         })
     }
 
@@ -64,13 +69,20 @@ class Section extends Component {
     }
 
     render() {
-        const {pathname, title} = this.state;
+        const {pathname, title, modalOpened} = this.state;
         return (
             <SectionWrapper>
                 <Title>{title}</Title>
                 <Wrapper>
-                    <Display pathname={pathname} currentHover={this.state.currentHover}/>
-                    <Selection pathname={pathname} handleMouseEnter={this.handleMouseEnter} items={this.state.items}/>
+                    <Display 
+                        pathname={pathname} 
+                        modalOpened={modalOpened}
+                        currentHover={this.state.currentHover}
+                        openModal={this.openModal}/>
+                    <Selection 
+                        pathname={pathname} 
+                        handleMouseEnter={this.handleMouseEnter} 
+                        items={this.state.items}/>
                 </Wrapper>
             </SectionWrapper>
         );

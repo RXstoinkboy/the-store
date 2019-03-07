@@ -11,6 +11,8 @@ export const Wrapper = styled.div`
     justify-items: center;
     align-items: center;
     overflow: hidden;
+    height: 100%;
+    padding-bottom: 1rem;
 
     @media all and (orientation: portrait) and (max-width: 450px){
         grid-column: 1/-1;
@@ -67,16 +69,31 @@ export const Info = styled.div`
     align-items: center;
 `
 
-export const Name = styled.h2`
+export const Text = styled.h2`
+    color: white;
+    text-shadow: 0 0 20px hsla(0, 0%, 60%, 1);
+    font-size: 2rem;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0 .5rem 0 0;
+    border: 1px solid hsla(0, 0%, 80%, .5);
+    border-radius: 5px;
+    padding: .3rem;
 
-`
-
-export const Price = styled.h3`
-
+    @media all and (max-width: 850px){
+        font-size: 1.5rem;
+    }
 `
 
 export const MoreInfo = styled.svg`
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
 
+    @media all and (max-width: 850px){
+        height: 1.5rem;
+        width: 1.5rem;
+    }
 `
 
 export const Details = styled.div`
