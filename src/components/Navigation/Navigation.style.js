@@ -209,15 +209,19 @@ export const Shade = styled(PosedShade)`
 
 export const CartWrapper = styled.div`
     top: .5rem;
+    right: .25rem;
     position: absolute;
     width: 4vw;
     transition: all .3s ease;
+    z-index: 101;
+    cursor: pointer;
 
     @media all and (max-width: 450px) and (orientation: portrait){
-        width: 8vw
+        width: 8vw;
+        right: -1rem;
     }
 
-    &:hover{
+    &:hover > *{
         color: var(--mainPink);
     }
 `
