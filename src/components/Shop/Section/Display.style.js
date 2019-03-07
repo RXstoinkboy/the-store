@@ -36,9 +36,17 @@ export const Controls = styled.div`
 `
 
 const PosedButton = posed.button({
-    pressable: true,
-    init: {scale: 1},
-    press: {scale: 1.1}
+    hoverable: true,
+    init: {
+        y: 0,
+        scale: 1,
+        boxShadow: '0 0 20px hsl(0, 0%, 30%), 0 6px 10px hsl(0, 0%, 30%)'
+        },
+    hover: {
+        y: -2,
+        scale: 1.01,
+        boxShadow: '0 0 15px hsl(0, 0%, 30%), 0 7px 8px hsl(0, 0%, 30%)'
+    }
 })
 
 export const Button = styled(PosedButton)`
@@ -51,13 +59,10 @@ export const Button = styled(PosedButton)`
     text-transform: uppercase;
     cursor: pointer;
     transition: all .3s ease;
+    
 
     &:focus{
         outline: none;
-    }
-
-    &:hover{
-        background: linear-gradient(135deg, hsla(222, 50%, 80%, .3), hsla(100, 50%, 80%, .4));
     }
 `
 
@@ -85,7 +90,19 @@ export const Text = styled.h2`
     }
 `
 
-export const MoreInfo = styled.svg`
+const PosedMoreInfo = posed.svg({
+    hoverable: true,
+    init: {
+        scale: 1,
+        y: 0
+    },
+    hover: {
+        scale: 1.04,
+        y: -2
+    }
+})
+
+export const MoreInfo = styled(PosedMoreInfo)`
     height: 2rem;
     width: 2rem;
     cursor: pointer;

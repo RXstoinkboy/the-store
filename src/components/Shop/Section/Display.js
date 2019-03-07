@@ -7,6 +7,7 @@ const Display = props => {
     const modal = props.modalOpened 
         ? <Modal 
         openModal={props.openModal}
+        name={props.currentHover.name}
         description={props.currentHover.description}/> 
         : null;
 
