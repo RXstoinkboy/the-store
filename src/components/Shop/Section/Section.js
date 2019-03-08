@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
-import categories from '../categories';
+// import categories from '../categories';
 import Display from './Display';
 import Selection from './Selection';
 import {Wrapper, SectionWrapper} from './Section.style';
 import {Title} from '../Shop.style';
-import sneakers from './sneakers';
-import boots from './boots';
-import heels from './heels';
-import bags from './bags';
+
+import {connect} from 'react-redux';
+import manageItemsInShop from '../../../reducers/manageItemsInShop';
+import {selectCurrentItems} from '../../../actions/selectCurrentItems';
+import {displayHoveredItem} from '../../../actions/displayHoveredItem';
 
 class Section extends Component {
     state = {
         pathname: window.location.pathname,
         title: '',
-        items: {},
         currentHover: {},
         modalOpened: false
     }
 
     handleMouseEnter =e=>{
-        this.setState({currentHover: this.state.items[e.target.id]})
+        this.setState({currentHover: this.props.items[e.target.id]}, ()=>{console.log(this.state.currentHover)});
     }
 
     openModal =()=>{
@@ -30,46 +30,34 @@ class Section extends Component {
 
     componentDidMount(){
         const {pathname} = this.state;
+
+        this.props.selectCurrentItems(pathname);
+        
         const selectTitle = () => {
             switch(pathname){
                 case '/shop/sneakers':
-                    return 'sneakers';
+                return 'sneakers';
                 case '/shop/boots':
                     return 'boots';
-                case '/shop/bags':
+                    case '/shop/bags':
                     return 'bags';
-                case '/shop/womenshoes':
+                    case '/shop/womenshoes':
                     return `women's shoes`;
-                default:
+                    default:
                     return pathname;
+                }
             }
-        }
-
-        const selectCurrentItems =()=>{
-            switch(pathname){
-                case '/shop/sneakers':
-                    return sneakers;
-                case '/shop/boots':
-                    return boots;
-                case '/shop/bags':
-                    return bags;
-                case '/shop/womenshoes':
-                    return heels;
-                default:
-                    return pathname;
-            }
-        }
-        const startItem = Object.keys(selectCurrentItems())[0];
-
-        this.setState({
-            title: selectTitle(),
-            items: selectCurrentItems(),
-            currentHover: (selectCurrentItems())[startItem]
-        })
+            
+            this.setState({
+                title: selectTitle(),
+                // items: selectCurrentItems(),
+                // currentHover: this.props.items
+            }, ()=>{console.log(this.state.currentHover);})
+            
     }
 
     render() {
-        const {pathname, title, modalOpened} = this.state;
+        const {pathname, title, modalOpened, currentHover} = this.state;
         return (
             <SectionWrapper>
                 <Title>{title}</Title>
@@ -77,16 +65,28 @@ class Section extends Component {
                     <Display 
                         pathname={pathname} 
                         modalOpened={modalOpened}
-                        currentHover={this.state.currentHover}
+                        currentHover={currentHover}
                         openModal={this.openModal}/>
                     <Selection 
                         pathname={pathname} 
                         handleMouseEnter={this.handleMouseEnter} 
-                        items={this.state.items}/>
+                        items={this.props.items}/>
                 </Wrapper>
             </SectionWrapper>
         );
     }
 }
 
-export default Section;
+const mapStateToProps = state => {
+    return {
+        items: state.manageItemsInShop
+    }
+}
+
+const mapDispatchToProps = dispatch =>{
+    return {
+        selectCurrentItems: path => {dispatch(selectCurrentItems(path))}
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Section);

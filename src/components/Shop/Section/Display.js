@@ -1,14 +1,14 @@
 import React from 'react';
 import {Wrapper, Img, Button, Controls, Text, Info, MoreInfo, Details} from './Display.style';
 import {Link} from 'react-router-dom'
-import Modal from './Modal.js'
+import Modal from './Modal.js';
 
 const Display = props => {
     const modal = props.modalOpened 
         ? <Modal 
-        openModal={props.openModal}
-        name={props.currentHover.name}
-        description={props.currentHover.description}/> 
+            openModal={props.openModal}
+            name={props.currentHover.name}
+            description={props.currentHover.description}/> 
         : null;
 
     return (
@@ -46,11 +46,13 @@ const Display = props => {
                     <Link to='/shop'>
                         <Button left>back to store</Button>
                     </Link>
-                    <Button>add to cart</Button>
+                    <Button>
+                        add to cart
+                    </Button>
                 </Controls>
             </Details>
         </Wrapper>
     );
 };
 
-export default Display;
+export default Details;

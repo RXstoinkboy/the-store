@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import initialReducer from './initialReducer';
+import manageItemsInShop from './manageItemsInShop';
 
 export default combineReducers({
-    initialReducer
+    manageItemsInShop
 })
