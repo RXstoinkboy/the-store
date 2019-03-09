@@ -5,8 +5,8 @@ import pinkShoes from '../../../images/highHeels/pinkShoes.png';
 import whiteShoes from '../../../images/highHeels/whiteShoes.png';
 import yellowShoes from '../../../images/highHeels/yellowShoes.png';
 
-const heels = {
-    blackShoes: {
+const heels = [
+    {
         id: 'blackShoes',
         name: 'black shoes',
         color: 'var(--mainBlack)',
@@ -15,9 +15,10 @@ const heels = {
         price: 80,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'heels'
     },
-    brownShoes: {
+    {
         id: 'brownShoes',
         name: 'brown shoes',
         color: 'var(--mainBrown)',
@@ -26,9 +27,10 @@ const heels = {
         price: 70,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'heels'
     },
-    lightPinkShoes: {
+    {
         id: 'lightPinkShoes',
         name: 'lightPink shoes',
         color: 'var(--mainPink)',
@@ -37,9 +39,10 @@ const heels = {
         price: 30,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'heels'
     },
-    pinkShoes: {
+    {
         id: 'pinkShoes',
         name: 'pink shoes',
         color: 'var(--mainRed)',
@@ -48,9 +51,10 @@ const heels = {
         price: 50,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'heels'
     },
-    whiteShoes: {
+    {
         id: 'whiteShoes',
         name: 'white shoes',
         color: 'var(--mainWhite)',
@@ -59,9 +63,10 @@ const heels = {
         price: 90,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'heels'
     },
-    yellowShoes: {
+    {
         id: 'yellowShoes',
         name: 'yellow shoes',
         color: 'var(--mainYellow)',
@@ -70,8 +75,9 @@ const heels = {
         price: 60,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'heels'
     },
-}
+]
 
 export default heels;

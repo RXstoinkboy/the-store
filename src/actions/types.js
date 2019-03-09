@@ -1,3 +1,8 @@
+export const SELECT_CATEGORY = 'SELECT_CATEGORY';
+
 export const ADD_ITEM = 'ADD_ITEM';
-export const CURRENT_ITEMS = 'CURRENT_ITEMS';
 export const HOVER_ITEM = 'HOVER_ITEM';
+
+export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
+export const INCREASE_AMOUNT = 'INCREASE_AMOUNT';
+export const DECREASE_AMOUNT = 'DECREASE_AMOUNT';

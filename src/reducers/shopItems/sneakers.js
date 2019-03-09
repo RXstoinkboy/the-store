@@ -4,8 +4,8 @@ import greySneakers from '../../images/sneakers/greySneakers.png';
 import redSneakers from '../../images/sneakers/redSneakers.png';
 import whiteSneakers from '../../images/sneakers/whiteSneakers.png';
 
-const sneakers = {
-    blackSneakers: {
+const sneakers = [
+    {
         id: 'blackSneakers',
         name: 'black sneakers',
         color: 'var(--mainBlack)',
@@ -14,9 +14,10 @@ const sneakers = {
         price: 50,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'sneakers'
     },
-    blueSneakers: {
+    {
         id: 'blueSneakers',
         name: 'blue sneakers',
         color: 'var(--mainBlue)',
@@ -25,9 +26,10 @@ const sneakers = {
         price: 80,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'sneakers'
     },
-    greySneakers: {
+    {
         id: 'greySneakers',
         name: 'grey sneakers',
         color: 'var(--mainGrey)',
@@ -36,9 +38,10 @@ const sneakers = {
         price: 20,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'sneakers'
     },
-    redSneakers: {
+    {
         id: 'redSneakers',
         name: 'red sneakers',
         color: 'var(--mainRed)',
@@ -47,9 +50,10 @@ const sneakers = {
         price: 50,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'sneakers'
     },
-    whiteSneakers: {
+    {
         id: 'whiteSneakers',
         name: 'white sneakers',
         color: 'var(--mainWhite)',
@@ -58,8 +62,9 @@ const sneakers = {
         price: 60,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'sneakers'
     },
-}
+]
 
 export default sneakers;

@@ -5,8 +5,8 @@ import desertBoots from '../../images/boots/desertBoots.png';
 import greenBoots from '../../images/boots/greenBoots.png';
 import yellowBoots from '../../images/boots/yellowBoots.png';
 
-const boots = {
-    blackBoots: {
+const boots = [
+    {
         id: 'blackBoots',
         name: 'black boots',
         color: 'var(--mainBlack)',
@@ -15,9 +15,10 @@ const boots = {
         price: 950,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'boots'
     },
-    brownBoots: {
+    {
         id: 'brownBoots',
         name: 'brown boots',
         color: 'var(--mainBrown)',
@@ -26,9 +27,10 @@ const boots = {
         price: 90,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'boots'
     },
-    combatBoots: {
+    {
         id: 'combatBoots',
         name: 'combat boots',
         color: 'var(--mainGrey)',
@@ -37,9 +39,10 @@ const boots = {
         price: 60,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'boots'
     },
-    desertBoots: {
+    {
         id: 'desertBoots',
         name: 'desert boots',
         color: 'var(--mainYellow)',
@@ -48,9 +51,10 @@ const boots = {
         price: 30,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'boots'
     },
-    greenBoots: {
+    {
         id: 'greenBoots',
         name: 'green boots',
         color: 'var(--mainGreen)',
@@ -59,9 +63,10 @@ const boots = {
         price: 15,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'boots'
     },
-    yellowBoots: {
+    {
         id: 'yellowBoots',
         name: 'yellow boots',
         color: 'var(--mainYellow)',
@@ -70,8 +75,9 @@ const boots = {
         price: 70,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'boots'
     },
-}
+]
 
 export default boots;

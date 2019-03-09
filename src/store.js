@@ -31,6 +31,9 @@ import rootReducer from './reducers/index'
 
 export const history = createHistory()
 
-const store = createStore(connectRouter(history)(rootReducer));
+const initialState = {}
+const store = createStore(connectRouter(history)(rootReducer), initialState);
+
+store.subscribe(()=>{console.log(store.getState())});
 
 export default store;

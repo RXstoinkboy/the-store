@@ -55,4 +55,4 @@ const Display = props => {
     );
 };
 
-export default Details;
+export default Display;

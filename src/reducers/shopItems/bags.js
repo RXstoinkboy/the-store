@@ -6,8 +6,8 @@ import LVbag from '../../images/bags/LVbag.png';
 import redBag from '../../images/bags/redBag.png';
 import yellowBag from '../../images/bags/yellowBag.png';
 
-const bags = {
-    brownBag: {
+const bags = [
+    {
         id: 'brownBag',
         name: 'brown bag',
         color: 'var(--mainBrown)',
@@ -16,9 +16,10 @@ const bags = {
         price: 300,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'bags'
     },
-    darkGreyBag: {
+    {
         id: 'darkGreyBag',
         name: 'dark grey bag',
         color: 'var(--mainBlack)',
@@ -27,9 +28,10 @@ const bags = {
         price: 90,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'bags'
     },
-    flowersBag: {
+    {
         id: 'flowersBag',
         name: 'flowers bag',
         color: 'var(--mainRed)',
@@ -38,9 +40,10 @@ const bags = {
         price: 20,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'bags'
     },
-    greyBag: {
+    {
         id: 'greyBag',
         name: 'grey bag',
         color: 'var(--mainGrey)',
@@ -49,9 +52,10 @@ const bags = {
         price: 70,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'bags'
     },
-    LVbag: {
+    {
         id: 'LVbag',
         name: 'Luis Vitton bag',
         color: 'var(--mainWhite)',
@@ -61,8 +65,9 @@ const bags = {
         amount: 10,
         ordered: 0,
         inCart: false,
+        category: 'bags'
     },
-    redBag: {
+    {
         id: 'redBag',
         name: 'red bag',
         color: 'var(--mainRed)',
@@ -71,9 +76,10 @@ const bags = {
         price: 45,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'bags'
     },
-    yellowBag: {
+    {
         id: 'yellowBag',
         name: 'yellow bag',
         color: 'var(--mainYellow)',
@@ -82,8 +88,9 @@ const bags = {
         price: 200,
         amount: 10,
         ordered: 0,
-        inCart: false
+        inCart: false,
+        category: 'bags'
     },
-}
+]
 
 export default bags;

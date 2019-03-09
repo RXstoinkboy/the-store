@@ -1,6 +1,12 @@
 import { combineReducers } from 'redux';
-import manageItemsInShop from './manageItemsInShop';
+import {allShopItems} from './allShopItems';
+import {currentCategory} from './currentCategory';
+import {currentlyHoveredItem} from './currentlyHoveredItem';
+import {itemsInCart} from './itemsInCart';
 
 export default combineReducers({
-    manageItemsInShop
+    allShopItems,
+    currentCategory,
+    currentlyHoveredItem,
+    itemsInCart
 })
