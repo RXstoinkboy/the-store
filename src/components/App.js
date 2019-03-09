@@ -14,13 +14,13 @@ class App extends Component {
             <Fragment>
                 <Navigation />
                 <Switch>
-                    <Route path='/about' component={About} />
+                    <Route exact path='/about' render={(props)=><About {...props}/>} key='1'/>
                     {['/shop', '/'].map(item => {
-                        return <Route exact path={item} component={Shop} key={item}/>
+                        return <Route exact path={item} render={(props)=><Shop {...props}/>} key='1'/>
                     })}
-                    <Route path='/cart' component={Cart} />
-                    <Route path='/contact' component={Contact} />
-                    <Route path='/shop/:section' component={Section} />
+                    <Route exact path='/cart' render={(props)=><Cart {...props}/>} key='1'/>
+                    <Route exact path='/contact' render={(props)=><Contact {...props}/>} key='1'/>
+                    <Route exact path='/shop/:section' render={(props)=><Section {...props}/>} key='1'/>
                 </Switch>
             </Fragment>
         );

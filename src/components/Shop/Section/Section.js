@@ -6,6 +6,7 @@ import {Wrapper, SectionWrapper} from './Section.style';
 import {Title} from '../Shop.style';
 
 import {connect} from 'react-redux';
+import { withRouter } from 'react-router';
 // reducers
 import {currentCategory} from '../../../reducers/currentCategory';
 import {currentlyHoveredItem} from '../../../reducers/currentlyHoveredItem';
@@ -16,12 +17,14 @@ import {addItemToCart} from '../../../actions/addItemToCart';
 import {hoverItemToDisplay} from '../../../actions/hoverItemToDisplay';
 import {displayCurrentCategory} from '../../../actions/displayCurrentCategory';
 
+
 class Section extends Component {
     state = {
         pathname: window.location.pathname,
         title: '',
-        id: this.props.currentCategory,
-        currentHover: {},
+        id: '',
+        // this.props.currentCategory
+        // currentHover: '',
         modalOpened: false
     }
 
@@ -36,9 +39,22 @@ class Section extends Component {
     }
 
     componentDidMount(){
+        console.log('mounting');
+        
         const {pathname} = this.state;
         
         this.props.displayCurrentCategory(pathname);
+
+        // set initial rendered item in each section
+        if(pathname === '/shop/boots' && this.props.currentHover !== 'blackBoots'){
+            this.props.hoverItemToDisplay('blackBoots');
+        } else if (pathname === '/shop/sneakers' && this.props.currentHover !== 'blackSneakers'){
+            this.props.hoverItemToDisplay('blackSneakers');
+        }else if (pathname === '/shop/bags' && this.props.currentHover !== 'brownBag'){
+            this.props.hoverItemToDisplay('brownBag');
+        }else if (pathname === '/shop/womenshoes' && this.props.currentHover !== 'blackShoes'){
+            this.props.hoverItemToDisplay('blackShoes');
+        }
 
         const selectTitle = () => {
             switch(pathname){
@@ -63,7 +79,6 @@ class Section extends Component {
     render() {
         const {pathname, title, modalOpened} = this.state;
         
-
         return (
             <SectionWrapper>
                 <Title>{title}</Title>
@@ -83,7 +98,6 @@ class Section extends Component {
         );
     }
 }
-
 
 // define method to filter items by category
 const getCurrentItems = (state, category) => {
@@ -109,7 +123,7 @@ const mapStateToProps = state => {
         category: state.currentCategory,
         currentCategory: state.currentCategory,
         allItems: state.allShopItems,
-        currentHover: state.currentlyHoveredItem
+        currentHover: state.currentlyHoveredItem,
     }
 }
 
@@ -121,4 +135,4 @@ const mapDispatchToProps = dispatch =>{
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Section);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Section));

@@ -8,5 +8,5 @@ export default combineReducers({
     allShopItems,
     currentCategory,
     currentlyHoveredItem,
-    itemsInCart
+    itemsInCart,
 })
