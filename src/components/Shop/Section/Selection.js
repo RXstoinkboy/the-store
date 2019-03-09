@@ -1,6 +1,7 @@
 import React from 'react';
 import {Wrapper} from './Selection.style';
 import {Container, Img, Name} from './Selection.style';
+import PropTypes from 'prop-types';
 
 const Selection = props => {
     const {items, handleMouseEnter} = props;
@@ -35,5 +36,10 @@ const Selection = props => {
         </Wrapper>
     );
 };
+
+Selection.propTypes = {
+    items: PropTypes.array.isRequired,
+    handleMouseEnter: PropTypes.func.isRequired
+}
 
 export default Selection;

@@ -2,6 +2,7 @@ import React from 'react';
 import {Wrapper, Img, Button, Controls, Text, Info, MoreInfo, Details} from './Display.style';
 import {Link} from 'react-router-dom'
 import Modal from './Modal.js';
+import PropTypes from 'prop-types';
 
 const Display = props => {
     const modal = props.modalOpened 
@@ -54,5 +55,11 @@ const Display = props => {
         </Wrapper>
     );
 };
+
+Display.propTypes = {
+    modalOpened: PropTypes.bool.isRequired,
+    openModal: PropTypes.func.isRequired,
+    currentHover: PropTypes.object.isRequired
+}
 
 export default Display;

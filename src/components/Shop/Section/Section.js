@@ -6,7 +6,6 @@ import {Wrapper, SectionWrapper} from './Section.style';
 import {Title} from '../Shop.style';
 
 import {connect} from 'react-redux';
-import { withRouter } from 'react-router';
 // reducers
 import {currentCategory} from '../../../reducers/currentCategory';
 import {currentlyHoveredItem} from '../../../reducers/currentlyHoveredItem';
@@ -112,7 +111,6 @@ const getCurrentItems = (state, category) => {
 const displayHoveredItem = (state, id) => {
     return state.find(item => {
         if(item.id === id){
-            console.log(item);
             return item;
         }
     })
@@ -135,4 +133,4 @@ const mapDispatchToProps = dispatch =>{
     }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Section));
+export default connect(mapStateToProps, mapDispatchToProps)(Section);
