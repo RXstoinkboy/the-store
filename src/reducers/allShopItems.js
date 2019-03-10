@@ -4,8 +4,6 @@ import heels from './shopItems/heels';
 import boots from './shopItems/boots';
 import sneakers from './shopItems/sneakers';
 
-import {cloneDeep} from 'lodash';
-
 const allItems = [
     ...bags,
     ...heels,
@@ -16,37 +14,40 @@ const allItems = [
 export const allShopItems = (state = allItems, action) => {
     switch (action.type){
         case ADD_ITEM:
-                let addItemState = cloneDeep(state);
-                const itemToAdd = addItemState.indexOf(addItemState.find(item => item.id === action.id));
-                addItemState[itemToAdd].inCart = true;
-                addItemState[itemToAdd].ordered++;
-                addItemState[itemToAdd].amount--;
-            return addItemState;
+            return state.map(item => 
+                item.id === action.id 
+                ? {...item,
+                    inCart: true,
+                    ordered: item.ordered+1,
+                    amount: item.amount-1 }
+                : item);
 
         case DECREASE_AMOUNT:
-                let decAmountState = cloneDeep(state);
-                const itemToDec = decAmountState.indexOf(decAmountState.find(item => item.id === action.id));
-                decAmountState[itemToDec].amount++;
-                decAmountState[itemToDec].ordered--;
-            return decAmountState;
+            return state.map(item => 
+                item.id === action.id && item.ordered > 0
+                ? {...item,
+                    ordered: item.ordered-1,
+                    amount: item.amount+1 }
+                : item);
 
         case INCREASE_AMOUNT:
-                let incAmountState = cloneDeep(state);
-                const itemToInc = incAmountState.indexOf(incAmountState.find(item => item.id === action.id));
-                incAmountState[itemToInc].amount--;
-                incAmountState[itemToInc].ordered++;
-            return incAmountState;
+            return state.map(item => 
+                item.id === action.id && item.amount > 0
+                ? {...item,
+                    ordered: item.ordered+1,
+                    amount: item.amount-1 }
+                : item);
 
         case REMOVE_FROM_CART:
-                let removeItemState = cloneDeep(state);
-                const itemToRemove = removeItemState.indexOf(removeItemState.find(item => item.id === action.id));
-                const howManyOrdered = removeItemState[itemToRemove].ordered;
-                const howManyCurrentlyAvailable = removeItemState[itemToRemove].amount;
-                removeItemState[itemToRemove].inCart = false;
-                removeItemState[itemToRemove].ordered = 0;
-                removeItemState[itemToRemove].amount = howManyCurrentlyAvailable + howManyOrdered;
-            return removeItemState;
-            
+            return state.map(item => 
+                item.id === action.id 
+                ? {...item,
+                    inCart: false,
+                    amount: item.amount + item.ordered,
+                    ordered: 0}
+                
+                : item);
+
         default:
             return state
     }

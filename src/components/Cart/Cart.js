@@ -6,15 +6,38 @@ import PropTypes from 'prop-types';
 
 import {connect} from 'react-redux';
 
+import {decreaseAmount} from '../../actions/decreaseAmount'
+import {increaseAmount} from '../../actions/increaseAmount'
+import {removeItemFromCart} from '../../actions/removeItemFromCart'
+
 class Cart extends Component {
+    handleDecreaseAmount =(e)=>{
+        this.props.decreaseAmount(e.target.id)
+    }
+    handleIncreaseAmount =(e)=>{
+        this.props.increaseAmount(e.target.id)
+    }
+    handleRemoveItemFromCart =(e)=>{
+        this.props.removeItemFromCart(e.target.id)
+    }
     render() {
         return (
             <CartWrapper>
                 <Title>Cart</Title>
                     <Wrapper>
-                        <Item />
+                        {this.props.allItems.map(item => {
+                            if (item.inCart === true){
+                                return <Item 
+                                            item={item}
+                                            {...this.props}
+                                            handleDecreaseAmount={this.handleDecreaseAmount}
+                                            handleIncreaseAmount={this.handleIncreaseAmount}
+                                            handleRemoveItemFromCart={this.handleRemoveItemFromCart}
+                                        />
+                            }
+                        })}
                         <Total>Total amount: <span style={{textDecoration:'underline', marginLeft: '1rem'}}>$90</span></Total>
-                        <PurchaseButton>BUY NOW</PurchaseButton>
+                        <PurchaseButton active>BUY NOW</PurchaseButton>
                     </Wrapper>
             </CartWrapper>
         );
@@ -22,15 +45,19 @@ class Cart extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {}
-}
+    return {
+        allItems: state.allShopItems,
+    }
+};
 
 const mapDispatchToProps = {
-
-}
+    decreaseAmount,
+    increaseAmount,
+    removeItemFromCart
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);
 
 Cart.propTypes = {
-    items: PropTypes.array.isRequired
+    allItems: PropTypes.array.isRequired
 }
