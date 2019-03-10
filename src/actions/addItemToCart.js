@@ -1,8 +1,8 @@
 import {ADD_ITEM} from './types';
 
-export const addItemToCart = (item) => {
+export const addItemToCart = (id) => {
     return{
         type: ADD_ITEM,
-        item
+        id
     }
 }

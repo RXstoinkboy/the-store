@@ -52,7 +52,7 @@ const PosedButton = posed.button({
 export const Button = styled(PosedButton)`
     margin: ${props => props.left ? '0 .5rem 0 0' : '0 0 0 .5rem'};
     padding: 10px;
-    background: transparent;
+    background: ${props => props.active ? 'transparent' : 'red'};
     border: 2px solid white;
     border-radius: 5px;
     color: white;

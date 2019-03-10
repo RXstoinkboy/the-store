@@ -27,9 +27,11 @@ class Section extends Component {
     }
 
     handleClick =()=> {
-        const itemToAdd = this.props.allItems.find(item => item.id === this.props.currentHover);
-        this.props.addItemToCart(itemToAdd);
-        console.log(itemToAdd);
+        // const itemToAdd = this.props.allItems.find(item => item.id === this.props.currentHover);
+        // this.props.addItemToCart(itemToAdd);
+        // console.log(itemToAdd);
+        this.props.addItemToCart(this.props.currentHover);
+    
     }
 
     openModal =()=>{
@@ -86,7 +88,9 @@ class Section extends Component {
                         modalOpened={modalOpened}
                         currentHover={displayHoveredItem(this.props.allItems, this.props.currentHover)}
                         openModal={this.openModal}
-                        handleClick={this.handleClick}/>
+                        handleClick={this.handleClick}
+                        // active={toggleOrderActivity(this.props.allItems)}
+                        />
                     <Selection 
                         pathname={pathname} 
                         handleMouseEnter={this.handleMouseEnter}
@@ -107,6 +111,16 @@ const getCurrentItems = (state, category) => {
 const displayHoveredItem = (state, id) => {
     return state.find(item => item.id === id)
 }
+
+// const toggleOrderActivity = (state, id) => {
+//     const tempItem = state.find(item => item.id === id);
+//     const index = state.indexOf(tempItem);
+//     if(state.index.inCart && state.index.id === this.props.currentHover){
+//         return false;
+//     } else {
+//         return true;
+//     }
+// }
 
 const mapStateToProps = state => {
     return {

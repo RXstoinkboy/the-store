@@ -45,10 +45,12 @@ const Display = props => {
                 </Info>
                 <Controls>
                     <Link to='/shop'>
-                        <Button left>back to store</Button>
+                        <Button left active>back to store</Button>
                     </Link>
                     <Button 
                         onClick={props.handleClick}
+                        active={!props.currentHover.inCart ? true : false}
+                        disabled={props.currentHover.inCart ? true : false}
                     >
                         add to cart
                     </Button>
