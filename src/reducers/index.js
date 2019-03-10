@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
 import {allShopItems} from './allShopItems';
 import {currentCategory} from './currentCategory';
 import {currentlyHoveredItem} from './currentlyHoveredItem';

@@ -9,6 +9,10 @@ export const itemsInCart = ( state = [], action) => {
             return [...state, action.item];
         case REMOVE_FROM_CART:
             return 'cart';
+        case INCREASE_AMOUNT:
+            return state;
+        case DECREASE_AMOUNT:
+            return state;
         default: 
             return state
     }

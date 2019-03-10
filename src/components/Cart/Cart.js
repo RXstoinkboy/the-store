@@ -4,6 +4,8 @@ import Item from './Item';
 import {Wrapper, Total, PurchaseButton} from './Cart.style';
 import PropTypes from 'prop-types';
 
+import {connect} from 'react-redux';
+
 class Cart extends Component {
     render() {
         return (
@@ -19,7 +21,15 @@ class Cart extends Component {
     }
 }
 
-export default Cart;
+const mapStateToProps = (state) => {
+    return {}
+}
+
+const mapDispatchToProps = {
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);
 
 Cart.propTypes = {
     items: PropTypes.array.isRequired

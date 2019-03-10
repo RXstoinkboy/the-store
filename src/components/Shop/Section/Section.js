@@ -116,12 +116,20 @@ const mapStateToProps = state => {
     }
 }
 
-const mapDispatchToProps = dispatch =>{
-    return {
-        addItemToCart: item => {dispatch(addItemToCart(item))},
-        hoverItemToDisplay: id => {dispatch(hoverItemToDisplay(id))},
-        displayCurrentCategory: pathname => {dispatch(displayCurrentCategory(pathname))}
-    }
+// // longer notation
+// const mapDispatchToProps = dispatch =>{
+//     return {
+//         addItemToCart: item => {dispatch(addItemToCart(item))},
+//         hoverItemToDisplay: id => {dispatch(hoverItemToDisplay(id))},
+//         displayCurrentCategory: pathname => {dispatch(displayCurrentCategory(pathname))}
+//     }
+// }
+
+// shorthand notation
+const mapDispatchToProps = {
+        addItemToCart,
+        hoverItemToDisplay,
+        displayCurrentCategory
 }
 
 Section.propTypes = {
