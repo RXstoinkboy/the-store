@@ -1,8 +1,9 @@
 import React from 'react';
 import image from '../../images/boots/blackBoots.png';
 import {ItemWrapper, Miniature, Name, AmountWrapper, More, Amount, Less, SubTotal, Delete} from './Item.style';
+import PropTypes from 'prop-types';
 
-const Item = () => {
+const Item = props => {
     return (
         <ItemWrapper>
             <Miniature src={image}/>
@@ -25,3 +26,7 @@ const Item = () => {
 };
 
 export default Item;
+
+Item.propTypes = {
+    item: PropTypes.object.isRequired
+}

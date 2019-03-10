@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import posed from 'react-pose';
-import {Button} from '../Shop/Section/Display.style';
 
 export const ItemWrapper = styled.div`
     display: grid;

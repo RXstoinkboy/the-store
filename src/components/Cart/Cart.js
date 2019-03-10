@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {ShopWrapper as CartWrapper, Title} from '../Shop/Shop.style';
 import Item from './Item';
-import {Wrapper, Total, PurchaseButton} from './Cart.style'
+import {Wrapper, Total, PurchaseButton} from './Cart.style';
+import PropTypes from 'prop-types';
 
 class Cart extends Component {
     render() {
@@ -19,3 +20,7 @@ class Cart extends Component {
 }
 
 export default Cart;
+
+Cart.propTypes = {
+    items: PropTypes.array.isRequired
+}

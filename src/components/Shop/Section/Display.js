@@ -47,7 +47,9 @@ const Display = props => {
                     <Link to='/shop'>
                         <Button left>back to store</Button>
                     </Link>
-                    <Button>
+                    <Button 
+                        onClick={props.handleClick}
+                    >
                         add to cart
                     </Button>
                 </Controls>

@@ -6,29 +6,30 @@ import {Wrapper, SectionWrapper} from './Section.style';
 import {Title} from '../Shop.style';
 
 import {connect} from 'react-redux';
-// reducers
-import {currentCategory} from '../../../reducers/currentCategory';
-import {currentlyHoveredItem} from '../../../reducers/currentlyHoveredItem';
-import {allShopItems} from '../../../reducers/allShopItems';
 
 //actions
 import {addItemToCart} from '../../../actions/addItemToCart';
 import {hoverItemToDisplay} from '../../../actions/hoverItemToDisplay';
 import {displayCurrentCategory} from '../../../actions/displayCurrentCategory';
 
+import PropTypes from 'prop-types';
 
 class Section extends Component {
     state = {
         pathname: window.location.pathname,
         title: '',
         id: '',
-        // this.props.currentCategory
-        // currentHover: '',
         modalOpened: false
     }
 
     handleMouseEnter =e=>{
         this.props.hoverItemToDisplay(e.target.id);
+    }
+
+    handleClick =()=> {
+        const itemToAdd = this.props.allItems.find(item => item.id === this.props.currentHover);
+        this.props.addItemToCart(itemToAdd);
+        console.log(itemToAdd);
     }
 
     openModal =()=>{
@@ -37,9 +38,7 @@ class Section extends Component {
         })
     }
 
-    componentDidMount(){
-        console.log('mounting');
-        
+    componentDidMount(){        
         const {pathname} = this.state;
         
         this.props.displayCurrentCategory(pathname);
@@ -86,11 +85,12 @@ class Section extends Component {
                         pathname={pathname} 
                         modalOpened={modalOpened}
                         currentHover={displayHoveredItem(this.props.allItems, this.props.currentHover)}
-                        openModal={this.openModal}/>
+                        openModal={this.openModal}
+                        handleClick={this.handleClick}/>
                     <Selection 
                         pathname={pathname} 
                         handleMouseEnter={this.handleMouseEnter}
-                        items={getCurrentItems(this.props.allItems, this.props.currentCategory)}
+                        items={getCurrentItems(this.props.allItems, this.props.category)}
                         />
                 </Wrapper>
             </SectionWrapper>
@@ -100,37 +100,37 @@ class Section extends Component {
 
 // define method to filter items by category
 const getCurrentItems = (state, category) => {
-    return state.filter(item => {
-        if(item.category === category){
-            return item
-        }
-    })
+    return state.filter(item => item.category === category)
 }
 
 // change displayed item based on what is hovered
 const displayHoveredItem = (state, id) => {
-    return state.find(item => {
-        if(item.id === id){
-            return item;
-        }
-    })
+    return state.find(item => item.id === id)
 }
 
 const mapStateToProps = state => {
     return {
         category: state.currentCategory,
-        currentCategory: state.currentCategory,
         allItems: state.allShopItems,
-        currentHover: state.currentlyHoveredItem,
+        currentHover: state.currentlyHoveredItem
     }
 }
 
 const mapDispatchToProps = dispatch =>{
     return {
-        addItemToCart: id => {dispatch(addItemToCart(id))},
+        addItemToCart: item => {dispatch(addItemToCart(item))},
         hoverItemToDisplay: id => {dispatch(hoverItemToDisplay(id))},
         displayCurrentCategory: pathname => {dispatch(displayCurrentCategory(pathname))}
     }
+}
+
+Section.propTypes = {
+    category: PropTypes.string.isRequired,
+    allItems: PropTypes.array.isRequired,
+    currentHover: PropTypes.string.isRequired,
+    addItemToCart: PropTypes.func.isRequired,
+    hoverItemToDisplay: PropTypes.func.isRequired,
+    displayCurrentCategory: PropTypes.func.isRequired
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Section);
