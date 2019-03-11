@@ -1,14 +1,15 @@
 import React from 'react';
 import {Wrapper, Img, Button, Controls, Text, Info, MoreInfo, Details} from './Display.style';
 import {Link} from 'react-router-dom'
-import Modal from './Modal.js'
+import Modal from './Modal.js';
+import PropTypes from 'prop-types';
 
 const Display = props => {
     const modal = props.modalOpened 
         ? <Modal 
-        openModal={props.openModal}
-        name={props.currentHover.name}
-        description={props.currentHover.description}/> 
+            openModal={props.openModal}
+            name={props.currentHover.name}
+            description={props.currentHover.description}/> 
         : null;
 
     return (
@@ -44,13 +45,25 @@ const Display = props => {
                 </Info>
                 <Controls>
                     <Link to='/shop'>
-                        <Button left>back to store</Button>
+                        <Button left active>back to store</Button>
                     </Link>
-                    <Button>add to cart</Button>
+                    <Button 
+                        onClick={props.handleClick}
+                        active={!props.currentHover.inCart ? true : false}
+                        disabled={props.currentHover.inCart ? true : false}
+                    >
+                        add to cart
+                    </Button>
                 </Controls>
             </Details>
         </Wrapper>
     );
 };
+
+Display.propTypes = {
+    modalOpened: PropTypes.bool.isRequired,
+    openModal: PropTypes.func.isRequired,
+    currentHover: PropTypes.object.isRequired
+}
 
 export default Display;

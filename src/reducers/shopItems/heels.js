@@ -1,9 +1,9 @@
-import blackShoes from '../../../images/highHeels/blackShoes.png';
-import brownShoes from '../../../images/highHeels/brownShoes.png';
-import lightPinkShoes from '../../../images/highHeels/lightPinkShoes.png';
-import pinkShoes from '../../../images/highHeels/pinkShoes.png';
-import whiteShoes from '../../../images/highHeels/whiteShoes.png';
-import yellowShoes from '../../../images/highHeels/yellowShoes.png';
+import blackShoes from '../../images/highHeels/blackShoes.png';
+import brownShoes from '../../images/highHeels/brownShoes.png';
+import lightPinkShoes from '../../images/highHeels/lightPinkShoes.png';
+import pinkShoes from '../../images/highHeels/pinkShoes.png';
+import whiteShoes from '../../images/highHeels/whiteShoes.png';
+import yellowShoes from '../../images/highHeels/yellowShoes.png';
 
 const heels = [
     {
@@ -15,7 +15,7 @@ const heels = [
         price: 80,
         amount: 10,
         ordered: 0,
-        inCart: false,
+        inCart: true,
         category: 'heels'
     },
     {

@@ -1,6 +1,7 @@
 import React from 'react';
 import {ModalDiv, Shade, CloseModal} from './Modal.style';
 import {Text} from './Display.style';
+import PropTypes from 'prop-types';
 
 const Modal =props=> {
     return (
@@ -17,5 +18,11 @@ const Modal =props=> {
         </Shade>
     );
 };
+
+Modal.propTypes = {
+    description: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    openModal: PropTypes.func.isRequired
+}
 
 export default Modal;

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import posed from 'react-pose';
-import {Button} from '../Shop/Section/Display.style';
 
 export const ItemWrapper = styled.div`
     display: grid;
@@ -15,14 +14,26 @@ export const ItemWrapper = styled.div`
         grid-template-columns: repeat(4, 1fr);
     }
 `
-
-export const Miniature = styled.img`
+export const MiniatureWrapper = styled.div`
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: var(--mainBlack);
+    background: ${props => props.color};
     box-shadow: 0 0 15px hsla(0, 0%, 50%, .4), 0 5px 10px hsla(0, 0%, 30%, .6);
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    @media all and (max-width: 800px){
+        grid-column: 1/2;
+    }
+`
+
+export const Miniature = styled.img`
+    max-width: 100px;
+    max-height: 100px;
+
     @media all and (max-width: 800px){
         grid-column: 1/2;
     }

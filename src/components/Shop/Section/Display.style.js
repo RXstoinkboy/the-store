@@ -52,13 +52,13 @@ const PosedButton = posed.button({
 export const Button = styled(PosedButton)`
     margin: ${props => props.left ? '0 .5rem 0 0' : '0 0 0 .5rem'};
     padding: 10px;
-    background: transparent;
-    border: 2px solid white;
+    background: ${props => props.active ? 'transparent' : 'var(--mainGrey)'};
+    border: ${props => props.active ? '2px solid white' : '2px solid lightgrey'};
     border-radius: 5px;
-    color: white;
+    color: ${props => props.active ? 'white' : 'lightgrey'};
     text-transform: uppercase;
-    text-shadow: 0 1px 4px hsl(0, 0%, 0%);
-    cursor: pointer;
+    text-shadow: ${props => props.active ? '0 1px 4px hsl(0, 0%, 0%)' : 'null'};
+    cursor: ${props => props.active ? 'pointer' : 'disabled'};
     transition: all .3s ease;
     
     &:focus{

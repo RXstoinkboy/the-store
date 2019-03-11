@@ -1,6 +1,10 @@
-import { combineReducers } from 'redux';
-import initialReducer from './initialReducer';
+import {combineReducers} from 'redux';
+import {allShopItems} from './allShopItems';
+import {currentCategory} from './currentCategory';
+import {currentlyHoveredItem} from './currentlyHoveredItem';
 
 export default combineReducers({
-    initialReducer
+    allShopItems,
+    currentCategory,
+    currentlyHoveredItem
 })

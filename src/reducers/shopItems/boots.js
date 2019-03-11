@@ -1,83 +1,83 @@
-import blackShoes from '../../../images/highHeels/blackShoes.png';
-import brownShoes from '../../../images/highHeels/brownShoes.png';
-import lightPinkShoes from '../../../images/highHeels/lightPinkShoes.png';
-import pinkShoes from '../../../images/highHeels/pinkShoes.png';
-import whiteShoes from '../../../images/highHeels/whiteShoes.png';
-import yellowShoes from '../../../images/highHeels/yellowShoes.png';
+import blackBoots from '../../images/boots/blackBoots.png';
+import brownBoots from '../../images/boots/brownBoots.png';
+import combatBoots from '../../images/boots/combatBoots.png';
+import desertBoots from '../../images/boots/desertBoots.png';
+import greenBoots from '../../images/boots/greenBoots.png';
+import yellowBoots from '../../images/boots/yellowBoots.png';
 
-const heels = [
+const boots = [
     {
-        id: 'blackShoes',
-        name: 'black shoes',
+        id: 'blackBoots',
+        name: 'black boots',
         color: 'var(--mainBlack)',
-        img: blackShoes,
+        img: blackBoots,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 80,
+        price: 950,
         amount: 10,
         ordered: 0,
-        inCart: false,
-        category: 'heels'
+        inCart: true,
+        category: 'boots'
     },
     {
-        id: 'brownShoes',
-        name: 'brown shoes',
+        id: 'brownBoots',
+        name: 'brown boots',
         color: 'var(--mainBrown)',
-        img: brownShoes,
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 70,
-        amount: 10,
-        ordered: 0,
-        inCart: false,
-        category: 'heels'
-    },
-    {
-        id: 'lightPinkShoes',
-        name: 'lightPink shoes',
-        color: 'var(--mainPink)',
-        img: lightPinkShoes,
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 30,
-        amount: 10,
-        ordered: 0,
-        inCart: false,
-        category: 'heels'
-    },
-    {
-        id: 'pinkShoes',
-        name: 'pink shoes',
-        color: 'var(--mainRed)',
-        img: pinkShoes,
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
-        price: 50,
-        amount: 10,
-        ordered: 0,
-        inCart: false,
-        category: 'heels'
-    },
-    {
-        id: 'whiteShoes',
-        name: 'white shoes',
-        color: 'var(--mainWhite)',
-        img: whiteShoes,
+        img: brownBoots,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
         price: 90,
         amount: 10,
         ordered: 0,
         inCart: false,
-        category: 'heels'
+        category: 'boots'
     },
     {
-        id: 'yellowShoes',
-        name: 'yellow shoes',
-        color: 'var(--mainYellow)',
-        img: yellowShoes,
+        id: 'combatBoots',
+        name: 'combat boots',
+        color: 'var(--mainGrey)',
+        img: combatBoots,
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
         price: 60,
         amount: 10,
         ordered: 0,
         inCart: false,
-        category: 'heels'
+        category: 'boots'
+    },
+    {
+        id: 'desertBoots',
+        name: 'desert boots',
+        color: 'var(--mainYellow)',
+        img: desertBoots,
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
+        price: 30,
+        amount: 10,
+        ordered: 0,
+        inCart: false,
+        category: 'boots'
+    },
+    {
+        id: 'greenBoots',
+        name: 'green boots',
+        color: 'var(--mainGreen)',
+        img: greenBoots,
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
+        price: 15,
+        amount: 10,
+        ordered: 0,
+        inCart: false,
+        category: 'boots'
+    },
+    {
+        id: 'yellowBoots',
+        name: 'yellow boots',
+        color: 'var(--mainYellow)',
+        img: yellowBoots,
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at blanditiis sapiente error sint suscipit vitae iusto! Recusandae quis dolorum inventore aliquid praesentium totam assumenda debitis rem amet adipisci, facere sint cum saepe ad officia non libero exercitationem delectus neque?',
+        price: 70,
+        amount: 10,
+        ordered: 0,
+        inCart: false,
+        category: 'boots'
     },
 ]
 
-export default heels;
+export default boots;

@@ -5,9 +5,10 @@ export const Wrapper = styled.div`
     background: transparent;
     padding-left: 5vw;
     width: 100%;
-    height: 90vh;
+    min-height: 90vh;
     display: flex;
     flex-flow: column nowrap;
+    /* overflow: scroll; */
 
     @media all and (min-width: 1200px){
         grid-template-columns: 1fr 1fr;
@@ -28,5 +29,5 @@ export const Total = styled.p`
 `
 
 export const PurchaseButton = styled(Button)`
-margin: 0 10vw 0 auto;
+margin: 0 10vw 5vh auto;
 `
