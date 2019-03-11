@@ -38,14 +38,14 @@ export const Controls = styled.div`
 const PosedButton = posed.button({
     hoverable: true,
     init: {
-        y: 0,
         scale: 1,
-        boxShadow: '0 0 20px hsl(0, 0%, 50%), 0 6px 10px hsl(0, 0%, 50%), inset 0 0 10px hsla(0, 0%, 30%, .5)'
+        boxShadow: '0 0 20px hsl(0, 0%, 70%), 0 6px 10px hsl(0, 0%, 70%), inset 0 0 10px hsla(0, 0%, 30%, .5)',
+        background: 'transparent',
         },
     hover: {
-        y: -2,
         scale: 1.01,
-        boxShadow: '0 0 15px hsl(0, 0%, 50%), 0 7px 8px hsl(0, 0%, 50%), inset 0 0 10px hsla(0, 0%, 30%, .5)'
+        boxShadow: '0 0 15px hsl(0, 0%, 70%), 0 7px 8px hsl(0, 0%, 70%), inset 0 0 10px hsla(0, 0%, 30%, .5)',
+        background: `${props => props.color}`
     }
 })
 
@@ -81,9 +81,8 @@ export const Text = styled.h2`
     text-align: center;
     text-transform: capitalize;
     margin: 0 .5rem 0 0;
-    border: 1px solid hsla(0, 0%, 80%, .5);
-    border-radius: 5px;
     padding: .3rem;
+    font-family: 'PT Sans Narrow', sans-serif;
 
     @media all and (max-width: 850px){
         font-size: 1.5rem;

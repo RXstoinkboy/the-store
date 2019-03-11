@@ -18,6 +18,18 @@ const Selection = props => {
                             key={item.id}
                             
                         >
+                            <Name 
+                                id={item.id}
+                                color={item.color}
+                                style={
+                                    {
+                                        fontFamily: "'Kaushan Script', cursive",
+                                        gridRow: "3/4"
+                                    }
+                                }
+                                >
+                                ${item.price}
+                            </Name>
                             <Img 
                                 src={item.img} 
                                 id={item.id}/>

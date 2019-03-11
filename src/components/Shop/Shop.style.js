@@ -27,7 +27,7 @@ const PosedContainer = posed.div({
         filter: 'brightness(1)'
     },
     hover: {
-        filter: 'brightness(1.1)'
+        filter: 'brightness(1.15)'
     }
 })
 
@@ -63,12 +63,13 @@ export const Title = styled.h1`
     text-align: center;
     text-transform: capitalize;
     margin: 0;
+    font-family: 'Kaushan Script', cursive;
 `
 
 export const Img = styled.img`
     grid-row: 1/2;
     max-height: 70%;
-    max-width: 100%;
+    max-width: 80%;
 
     @media all and (max-width: 850px){
         grid-row: 1/-1;
@@ -89,6 +90,7 @@ export const Name = styled.h3`
     text-align: center;
     color: white;
     text-shadow: 0 0 15px hsla(0, 0%, 60%, 1);
+    font-family: 'PT Sans Narrow', sans-serif;
 
     @media all and (max-width: 850px){
         grid-row: 1/-1;

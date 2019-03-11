@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const SectionWrapper = styled.div`
-    height: 100vh;
+    max-height: 100vh;
+    margin: 0;
     background: linear-gradient(135deg, hsla(222, 50%, 80%, .3), hsla(100, 50%, 80%, .4));
 `
 

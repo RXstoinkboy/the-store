@@ -26,6 +26,7 @@ export const Total = styled.p`
     margin-right: 10vw;
     font-size: 1.5rem;
     font-weight: bold;
+    font-family: 'PT Sans Narrow', sans-serif;
 `
 
 export const PurchaseButton = styled(Button)`

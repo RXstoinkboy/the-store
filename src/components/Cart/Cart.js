@@ -37,7 +37,18 @@ class Cart extends Component {
                                         />
                             }
                         })}
-                        <Total>Total amount: <span style={{textDecoration:'underline', marginLeft: '1rem'}}>${totalAmount(this.props.allItems)}</span></Total>
+                        <Total>Total amount: 
+                            <span 
+                                style={
+                                    {
+                                        marginLeft: '1rem',
+                                        fontFamily: "'Kaushan Script', cursive"
+                                    }
+                                }
+                            >
+                                ${totalAmount(this.props.allItems)}
+                            </span>
+                        </Total>
                         <PurchaseButton active>BUY NOW</PurchaseButton>
                     </Wrapper>
             </CartWrapper>

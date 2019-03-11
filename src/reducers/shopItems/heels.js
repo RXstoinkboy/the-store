@@ -15,7 +15,7 @@ const heels = [
         price: 80,
         amount: 10,
         ordered: 0,
-        inCart: true,
+        inCart: false,
         category: 'heels'
     },
     {

@@ -19,10 +19,12 @@ export const Wrapper = styled.div`
 const PosedContainer = posed.div({
     hoverable: true,
     init: {
-        filter: 'brightness(1)'
+        filter: 'brightness(1)',
+        x: 0
     },
     hover: {
-        filter: 'brightness(1.1)'
+        filter: 'brightness(1.15)',
+        x: -5
     }
 })
 
@@ -31,7 +33,7 @@ export const Container = styled(PosedContainer)`
     background: ${props => props.color};
     box-shadow: inset 0 0 70px hsla(0deg, 0%, 50%, .3);
     display: grid;
-    grid-template-rows: 4fr 1fr;
+    grid-template-rows: 1fr 4fr 1fr;
     align-items: center;
     margin: 10px;
     border-radius: 10px;
@@ -76,18 +78,20 @@ export const Container = styled(PosedContainer)`
 `
 
 export const Img = styled.img`
-    grid-row: 1/2;
+    grid-row: 2/3;
     max-height: 90%;
     max-width: 90%;
+    margin: 10px 0;
 `
 export const Name = styled.h3`
     color: white;
-    grid-row: 2/3;
+    grid-row: 1/2;
     text-shadow: 0 0 20px hsla(0, 0%, 60%, 1);
     font-size: 1.5rem;
     text-transform: capitalize;
     margin:0;
     text-align: center;
+    font-family: 'PT Sans Narrow', sans-serif;
 
     @media all and (max-width: 850px){
         font-size: 1rem;

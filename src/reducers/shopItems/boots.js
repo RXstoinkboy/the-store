@@ -15,7 +15,7 @@ const boots = [
         price: 950,
         amount: 10,
         ordered: 0,
-        inCart: true,
+        inCart: false,
         category: 'boots'
     },
     {

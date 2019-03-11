@@ -16,7 +16,7 @@ const bags = [
         price: 300,
         amount: 10,
         ordered: 0,
-        inCart: true,
+        inCart: false,
         category: 'bags'
     },
     {

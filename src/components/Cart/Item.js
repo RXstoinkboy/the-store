@@ -29,7 +29,7 @@ const Item = props => {
                     id={item.id} 
                     onClick={handleIncreaseAmount}>+</More>
             </AmountWrapper>
-            <SubTotal>{item.price}</SubTotal>
+            <SubTotal>${item.price}</SubTotal>
             <Delete 
                 id={item.id}
                 onClick={handleRemoveItemFromCart}

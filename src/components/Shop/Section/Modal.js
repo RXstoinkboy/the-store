@@ -6,10 +6,11 @@ import PropTypes from 'prop-types';
 const Modal =props=> {
     return (
         <Shade>
-            <ModalDiv>
-                <Text style={{marginBottom: '1rem'}}>{props.name}</Text>                
+            <ModalDiv style={{fontFamily: "'PT Sans Narrow', sans-serif"}}>
+                <Text style={{marginBottom: '1rem', fontFamily: "'Kaushan Script', cursive"}}>{props.name}</Text>                
                 {props.description}
                 <CloseModal
+                    active
                     onClick={props.openModal}
                 >
                     Close

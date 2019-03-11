@@ -42,6 +42,8 @@ export const Miniature = styled.img`
 export const Name = styled.h2`
     font-weight: 600;
     text-align: center;
+    text-transform: capitalize;
+    font-family: 'PT Sans Narrow', sans-serif;
 
     @media all and (max-width: 800px){
         grid-column: 1/2;
@@ -113,6 +115,8 @@ export const Less = styled(More)`
 `
 
 export const SubTotal = styled(Name)`
+    font-family: 'Kaushan Script', cursive;
+    
     @media all and (max-width: 800px){
         grid-row: 1/3;
         grid-column: 3/4;
