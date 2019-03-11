@@ -3,6 +3,10 @@ import {Wrapper, Button, NavLinks,NavItem, Bar, MediaWrapper, Img, Logo, Shade, 
 import logo from '../../images/logo.png';
 import {Link} from 'react-router-dom';
 
+import PropTypes from 'prop-types';
+
+import {connect} from 'react-redux';
+
 class Navigation extends Component {
     state={
         open: false
@@ -33,7 +37,7 @@ class Navigation extends Component {
                                 H122.2c-25.4,0-46-16.8-46.4-37.5l26.8-302.3h45.2v41c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h139.3v41
                                 c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h45.2l26.9,302.3C412.8,445.2,392.1,462,366.8,462z"/>
                         </Cart>
-                        <Number>10</Number>
+                        <Number>{numberOfItemsInStore(this.props.allItems)}</Number>
                     </Link>
                 </CartWrapper>
                 <Link to="/">
@@ -76,4 +80,24 @@ class Navigation extends Component {
     }
 }
 
-export default Navigation;
+const numberOfItemsInStore = (state) => {
+    let itemsInStore = 0;
+    state.forEach(item => {
+        if(item.inCart === true){
+            itemsInStore = itemsInStore + item.ordered;
+        }
+    })
+    return itemsInStore;
+}
+
+const mapStateToProps = (state) => {
+    return {
+        allItems: state.allShopItems,
+    }
+};
+
+export default connect(mapStateToProps, null)(Navigation);
+
+Navigation.propTypes = {
+    allItems: PropTypes.array.isRequired
+}

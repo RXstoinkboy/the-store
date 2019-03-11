@@ -154,7 +154,7 @@ export const NavItem = styled(PosedNavItem)`
 const PosedMediaWrapper = posed.div({
     closed: {
         rotate: -90,
-        x: '46.25vw',
+        x: '46vw',
         originX: '0%',
         bottom: '0rem'
     },  
@@ -166,7 +166,6 @@ const PosedMediaWrapper = posed.div({
 })
 export const MediaWrapper = styled(PosedMediaWrapper)`
     position: absolute;
-    /* margin-left: 10vw; */
     height: 2rem;
 
     @media all and (max-width: 850px){

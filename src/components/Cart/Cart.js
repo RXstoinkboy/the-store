@@ -28,6 +28,7 @@ class Cart extends Component {
                         {this.props.allItems.map(item => {
                             if (item.inCart === true){
                                 return <Item 
+                                            key={item.id}
                                             item={item}
                                             {...this.props}
                                             handleDecreaseAmount={this.handleDecreaseAmount}
@@ -36,12 +37,22 @@ class Cart extends Component {
                                         />
                             }
                         })}
-                        <Total>Total amount: <span style={{textDecoration:'underline', marginLeft: '1rem'}}>$90</span></Total>
+                        <Total>Total amount: <span style={{textDecoration:'underline', marginLeft: '1rem'}}>${totalAmount(this.props.allItems)}</span></Total>
                         <PurchaseButton active>BUY NOW</PurchaseButton>
                     </Wrapper>
             </CartWrapper>
         );
     }
+}
+
+const totalAmount = (state) => {
+    let total = 0;
+    state.forEach(item => {
+        if(item.inCart === true){
+            total = total + (item.price * item.ordered);
+        }
+    })
+    return total;
 }
 
 const mapStateToProps = (state) => {

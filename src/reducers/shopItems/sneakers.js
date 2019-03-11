@@ -14,7 +14,7 @@ const sneakers = [
         price: 50,
         amount: 10,
         ordered: 0,
-        inCart: false,
+        inCart: true,
         category: 'sneakers'
     },
     {
