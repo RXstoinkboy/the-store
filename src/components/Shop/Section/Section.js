@@ -26,17 +26,17 @@ class Section extends Component {
         this.props.hoverItemToDisplay(e.target.id);
     }
 
-    handleClick = async () => {
-        await this.props.addItemToCart(this.props.currentHover);
-        await this.handleAddToLocalStorage();
+    handleClick = () => {
+        this.props.addItemToCart(this.props.currentHover);
+        // await this.handleAddToLocalStorage();
     }
 
-    handleAddToLocalStorage =()=>{
-        let addToLocalStorage = this.props.allItems.filter(item => 
-            item.inCart === true
-            );
-        localStorage.setItem('inCart', JSON.stringify(addToLocalStorage))
-    }
+    // handleAddToLocalStorage =()=>{
+    //     let addToLocalStorage = this.props.allItems.filter(item => 
+    //         item.inCart === true
+    //         );
+    //     localStorage.setItem('inCart', JSON.stringify(addToLocalStorage))
+    // }
 
     openModal =()=>{
         this.setState(prevState=>{

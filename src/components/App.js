@@ -44,9 +44,13 @@ class App extends Component {
     }
 }
 
+// const mapStateFromProps = (state) => {
+//     return {allItems: state.allItems}
+// }
+
 // const mapDispathToProps = {
 //     loadFromLocalStorage
 // }
 
-// export default connect(null, mapDispathToProps)(App);
+// export default connect(mapStateFromProps, mapDispathToProps)(App);
 export default App;

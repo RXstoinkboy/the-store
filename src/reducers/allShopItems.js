@@ -53,8 +53,8 @@ export const allShopItems = (state = allItems, action) => {
                 
                 : item);
 
-        case LOAD_LOCAL_STORAGE:
-            return Object.assign({}, {val: action.obj})
+        // case LOAD_LOCAL_STORAGE:
+        //     return Object.assign({}, {val: action.obj})
 
         default:
             return state

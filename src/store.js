@@ -4,39 +4,46 @@ import thunk from 'redux-thunk'
 import createHistory from 'history/createBrowserHistory'
 import rootReducer from './reducers/index'
 
-// export const history = createHistory()
-
-// const initialState = {}
-// const enhancers = []
-// const middleware = [thunk, routerMiddleware(history)]
-
-// if (process.env.NODE_ENV === 'development') {
-//   const devToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__
-
-//   if (typeof devToolsExtension === 'function') {
-//     enhancers.push(devToolsExtension())
-//   }
-// }
-
-// const composedEnhancers = compose(
-//   applyMiddleware(...middleware),
-//   ...enhancers
-// )
-
-// export default createStore(
-//   connectRouter(history)(rootReducer),
-//   initialState,
-//   composedEnhancers
-// )
-
 export const history = createHistory()
 
-const initialState = {}
-const store = createStore(
-    connectRouter(history)(rootReducer), 
-    initialState,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+// const initialState = {}
 
-store.subscribe(()=>{console.log(store.getState())});
+// define enhancers 
+const enhancers = []
+const middleware = [thunk, routerMiddleware(history)]
+
+
+if (process.env.NODE_ENV === 'development') {
+  const devToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__
+
+  if (typeof devToolsExtension === 'function') {
+    enhancers.push(devToolsExtension())
+  }
+}
+
+// define storage item with data retrived from storage item (local of session - still deciding) 
+// use it only if local storage item is actually existing
+const locallyStoredState = localStorage.getItem('the-store_inCart') ? JSON.parse(localStorage.getItem('the-store_inCart')) : {};
+
+// combine all enhancers into one item
+const composedEnhancers = compose(
+    applyMiddleware(...middleware),
+    ...enhancers,
+)
+
+// create store with initial state defined as rood reducers
+// take advandage of local storage to hydrate store with preserved data from previous session
+// apply all other enhncers (middleware)
+const store = createStore(
+    connectRouter(history)(rootReducer),
+    locallyStoredState,
+    composedEnhancers,
+)
+
+// listen to all actions taken and every time save current state of the store in local/session storage
+store.subscribe(()=>{
+    console.log(store.getState());
+    localStorage.setItem('the-store_inCart', JSON.stringify(store.getState()))
+});
 
 export default store;
