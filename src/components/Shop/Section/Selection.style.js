@@ -23,7 +23,7 @@ const PosedContainer = posed.div({
         x: 0
     },
     hover: {
-        filter: 'brightness(1.10)',
+        filter: 'brightness(1.07)',
         x: -5
     }
 })
@@ -65,7 +65,7 @@ export const Container = styled(PosedContainer)`
     @media all and (orientation: portrait) and (max-width: 450px){
         height: auto;
         width: 40vw;
-        grid-template-rows: 4fr 1fr;
+        grid-template-rows: 1fr 4fr 1fr;
         margin: 5px;
 
         &:first-child{
@@ -82,6 +82,19 @@ export const Img = styled.img`
     max-height: 90%;
     max-width: 90%;
     margin: 10px 0;
+    margin: auto;
+
+    @media all and (max-width: 850px){
+        grid-row: 1/4;
+        max-height: 80%;
+        max-width: 80%;
+    }
+
+    @media all and (max-width: 450px){
+        grid-row: 2/3;
+        max-height: 80%;
+        max-width: 80%;
+    }
 `
 export const Name = styled.h3`
     color: white;
@@ -89,12 +102,19 @@ export const Name = styled.h3`
     text-shadow: 0 0 20px hsla(0, 0%, 60%, 1);
     font-size: 1.5rem;
     text-transform: capitalize;
-    margin:0;
+    margin: 0;
     text-align: center;
     font-family: 'PT Sans Narrow', sans-serif;
 
     @media all and (max-width: 850px){
         font-size: 1rem;
         height: 2rem;
+        grid-column: 2/3;
     }
-`
+
+    @media all and (max-width: 450px){
+        font-size: 1rem;
+        height: 2rem;
+        grid-column: 1/-1;
+    }
+    `

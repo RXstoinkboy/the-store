@@ -63,7 +63,12 @@ export const Title = styled.h1`
     text-align: center;
     text-transform: capitalize;
     margin: 0;
+    z-index: 10;
     font-family: 'Kaushan Script', cursive;
+    
+    @media all and (max-width: 450px){
+        font-size: 6vh;
+    }
 `
 
 export const Img = styled.img`

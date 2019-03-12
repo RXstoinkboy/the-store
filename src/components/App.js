@@ -8,25 +8,8 @@ import Contact from './Contact/Contact';
 import Section from './Shop/Section/Section';
 import Navigation from './Navigation/Navigation';
 
-import {connect} from 'react-redux';
-import {loadFromLocalStorage} from '../actions/loadFromLocalStorage';
-
 class App extends Component {
-    constructor(props){
-        super(props);
-        this.state = {};
-    }
-
-    // hydrateStateWithLocalStorage(){
-    //     console.log('hydrating')
-    // }
-
-    // componentDidMount(){
-    //     this.hydrateStateWithLocalStorage()
-    // }
-
     render() {
-        
         return (
             <Fragment>
                 <Navigation />
@@ -44,13 +27,4 @@ class App extends Component {
     }
 }
 
-// const mapStateFromProps = (state) => {
-//     return {allItems: state.allItems}
-// }
-
-// const mapDispathToProps = {
-//     loadFromLocalStorage
-// }
-
-// export default connect(mapStateFromProps, mapDispathToProps)(App);
 export default App;

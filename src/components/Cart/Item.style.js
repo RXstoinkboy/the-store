@@ -6,12 +6,19 @@ export const ItemWrapper = styled.div`
     margin: 20px 1rem;
     padding-bottom: 10px;
     grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
     justify-items: center;
     align-items: center;
     border-bottom: 1px solid var(--mainGrey);
 
     @media all and (max-width: 800px){
         grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 2fr;
+    }
+
+    @media all and (max-width: 500px){
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 2fr;
     }
 `
 export const MiniatureWrapper = styled.div`
@@ -27,16 +34,17 @@ export const MiniatureWrapper = styled.div`
 
     @media all and (max-width: 800px){
         grid-column: 1/2;
+        grid-row: 1/-1;
+    }
+    @media all and (max-width: 500px){
+        grid-column: 1/2;
+        grid-row: 2/-1;
     }
 `
 
 export const Miniature = styled.img`
     max-width: 100px;
     max-height: 100px;
-
-    @media all and (max-width: 800px){
-        grid-column: 1/2;
-    }
 `
 
 export const Name = styled.h2`
@@ -46,7 +54,13 @@ export const Name = styled.h2`
     font-family: 'PT Sans Narrow', sans-serif;
 
     @media all and (max-width: 800px){
+        grid-column: 1/-1;
+        grid-row: 1/2;
+    }
+
+    @media all and (max-width: 800px){
         grid-column: 1/2;
+        grid-row: 1/2;
     }
 `
 
@@ -60,9 +74,11 @@ export const AmountWrapper = styled.div`
         grid-column: 2/3;
         align-self: center;
     }
-
+    
     @media all and (max-width: 500px){
-        flex-flow: column nowrap;
+        grid-row: 2/3;
+        grid-column: 2/-1;
+        flex-flow: row nowrap;
     }
 `
 
@@ -122,6 +138,12 @@ export const SubTotal = styled(Name)`
         grid-column: 3/4;
         align-self: center;
     }
+
+    @media all and (max-width: 500px){
+        grid-row: 1/2;
+        grid-column: 2/3;
+        align-self: center;
+    }
 `
 
 export const Delete = styled.svg`
@@ -131,6 +153,12 @@ export const Delete = styled.svg`
 
     @media all and (max-width: 800px){
         grid-row: 1/3;
+        grid-column: -2/-1;
+        align-self: center;
+    }
+
+    @media all and (max-width: 500px){
+        grid-row: 1/2;
         grid-column: -2/-1;
         align-self: center;
     }

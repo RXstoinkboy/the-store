@@ -18,7 +18,7 @@ class Section extends Component {
     state = {
         pathname: window.location.pathname,
         title: '',
-        id: '',
+        // id: '',
         modalOpened: false
     }
 
@@ -28,15 +28,7 @@ class Section extends Component {
 
     handleClick = () => {
         this.props.addItemToCart(this.props.currentHover);
-        // await this.handleAddToLocalStorage();
     }
-
-    // handleAddToLocalStorage =()=>{
-    //     let addToLocalStorage = this.props.allItems.filter(item => 
-    //         item.inCart === true
-    //         );
-    //     localStorage.setItem('inCart', JSON.stringify(addToLocalStorage))
-    // }
 
     openModal =()=>{
         this.setState(prevState=>{
@@ -125,7 +117,7 @@ const mapStateToProps = state => {
     }
 }
 
-// // longer notation
+// // longer regular notation
 // const mapDispatchToProps = dispatch =>{
 //     return {
 //         addItemToCart: item => {dispatch(addItemToCart(item))},

@@ -19,6 +19,7 @@ const Selection = props => {
                             
                         >
                             <Name 
+                                price
                                 id={item.id}
                                 color={item.color}
                                 style={

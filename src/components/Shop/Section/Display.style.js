@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import posed from 'react-pose';
+import { hsla } from 'style-value-types';
 
 export const Wrapper = styled.div`
     grid-column: 1/2;
@@ -35,34 +36,32 @@ export const Controls = styled.div`
     align-items: center;
 `
 
-const PosedButton = posed.button({
-    hoverable: true,
-    init: {
-        scale: 1,
-        boxShadow: '0 0 20px hsl(0, 0%, 70%), 0 6px 10px hsl(0, 0%, 70%), inset 0 0 10px hsla(0, 0%, 30%, .5)',
-        background: 'transparent',
-        },
-    hover: {
-        scale: 1.01,
-        boxShadow: '0 0 15px hsl(0, 0%, 70%), 0 7px 8px hsl(0, 0%, 70%), inset 0 0 10px hsla(0, 0%, 30%, .5)',
-        background: `${props => props.color}`
-    }
-})
-
-export const Button = styled(PosedButton)`
+export const Button = styled.button`
     margin: ${props => props.left ? '0 .5rem 0 0' : '0 0 0 .5rem'};
     padding: 10px;
-    background: ${props => props.active ? 'transparent' : 'var(--mainGrey)'};
-    border: ${props => props.active ? '2px solid white' : '2px solid lightgrey'};
-    border-radius: 5px;
-    color: ${props => props.active ? 'white' : 'lightgrey'};
+    /* background: ${props => `${props.color}`}; */
+    /* border: ${props => props.active ? '2px solid white' : '2px solid lightgrey'}; */
+    border-radius: 3px;
+    /* color: ${props => props.active ? 'white' : 'lightgrey'}; */
+    /* color: white; */
     text-transform: uppercase;
-    text-shadow: ${props => props.active ? '0 1px 4px hsl(0, 0%, 0%)' : 'null'};
+    /* text-shadow: ${props => props.active ? '0 1px 4px hsl(0, 0%, 0%)' : 'null'}; */
     cursor: ${props => props.active ? 'pointer' : 'disabled'};
     transition: all .3s ease;
+    /* background: hsla(210deg, 40%, 50%, 1); */
+    /* border: 2px solid hsla(210deg, 40%, 50%, 1); */
+    color: white;
+    background: ${props => props.active ? 'hsla(210deg, 40%, 50%, 1)' : 'hsla(210deg, 15%, 60%, 1)'};
+    border: ${props => props.active ? '2px solid hsla(210deg, 40%, 50%, 1)' : '2px solid hsla(210deg, 15%, 60%, 1)'};
     
     &:focus{
         outline: none;
+    }
+
+    &:hover{
+        background: ${props => props.active ? 'hsla(0deg, 0%, 100%, 1)' : 'hsla(210deg, 15%, 60%, 1)'};
+        border: ${props => props.active ? '2px solid white' : '2px solid hsla(210deg, 15%, 60%, 1)'};
+        color: ${props => props.active ? 'hsla(210deg, 40%, 50%, 1)' : 'white'};
     }
 `
 
