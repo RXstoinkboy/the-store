@@ -39,17 +39,10 @@ export const Controls = styled.div`
 export const Button = styled.button`
     margin: ${props => props.left ? '0 .5rem 0 0' : '0 0 0 .5rem'};
     padding: 10px;
-    /* background: ${props => `${props.color}`}; */
-    /* border: ${props => props.active ? '2px solid white' : '2px solid lightgrey'}; */
     border-radius: 3px;
-    /* color: ${props => props.active ? 'white' : 'lightgrey'}; */
-    /* color: white; */
     text-transform: uppercase;
-    /* text-shadow: ${props => props.active ? '0 1px 4px hsl(0, 0%, 0%)' : 'null'}; */
     cursor: ${props => props.active ? 'pointer' : 'disabled'};
     transition: all .3s ease;
-    /* background: hsla(210deg, 40%, 50%, 1); */
-    /* border: 2px solid hsla(210deg, 40%, 50%, 1); */
     color: white;
     background: ${props => props.active ? 'hsla(210deg, 40%, 50%, 1)' : 'hsla(210deg, 15%, 60%, 1)'};
     border: ${props => props.active ? '2px solid hsla(210deg, 40%, 50%, 1)' : '2px solid hsla(210deg, 15%, 60%, 1)'};

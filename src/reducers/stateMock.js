@@ -6,6 +6,5 @@ const stateMock =
         {item3}
     ],
     currentCategory: '',
-    currentlyHoveredItem: '',
-    // addCurentVisibilityFilter
+    currentlyHoveredItem: ''
 }

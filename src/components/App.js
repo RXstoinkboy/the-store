@@ -20,7 +20,8 @@ class App extends Component {
                     })}
                     <Route exact path='/cart' render={(props)=><Cart {...props}/>} key='3'/>
                     <Route exact path='/contact' render={(props)=><Contact {...props}/>} key='4'/>
-                    <Route exact path='/shop/:section' render={(props)=><Section {...props}/>} key='5'/>
+                    <Route exact path='/shop/:section' render={(props)=> <Section {...props} />} key='5'
+                    />
                 </Switch>
             </Fragment>
         );

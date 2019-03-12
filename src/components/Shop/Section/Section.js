@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import categories from '../categories';
 import Display from './Display';
 import Selection from './Selection';
+import Settings from './Settings';
 import {Wrapper, SectionWrapper} from './Section.style';
 import {Title} from '../Shop.style';
 
@@ -18,8 +19,23 @@ class Section extends Component {
     state = {
         pathname: window.location.pathname,
         title: '',
-        // id: '',
-        modalOpened: false
+        modalOpened: false,
+        text: '',
+        displayedItems: []
+    }
+
+    handleChange = (e) =>{
+        this.setState({
+            text: e.target.value
+        }, ()=>{
+            this.setState({
+                displayedItems: 
+                    search(
+                        getCurrentItems(this.props.allItems, this.props.category),
+                        this.state.text
+                    ) 
+            })
+        }) 
     }
 
     handleMouseEnter =e=>{
@@ -67,15 +83,35 @@ class Section extends Component {
                 }
             }
 
+        const selectItems = () => {
+            switch(pathname){
+                case '/shop/sneakers':
+                    return getCurrentItems(this.props.allItems, 'sneakers');
+                case '/shop/boots':
+                    return getCurrentItems(this.props.allItems, 'boots');
+                case '/shop/bags':
+                    return getCurrentItems(this.props.allItems, 'bags');
+                case '/shop/womenshoes':
+                    return getCurrentItems(this.props.allItems, 'heels');
+                default:
+                    return pathname;
+                }
+            }
+
+        // set initial state
         this.setState({
             title: selectTitle(),
+            displayedItems: selectItems()
         });  
     }
 
     render() {
-        const {pathname, title, modalOpened} = this.state;
+        const {pathname, title, modalOpened, text} = this.state;
         
         return (
+            <React.Fragment>
+
+            <Settings text={text} handleChange={this.handleChange}/>
             <SectionWrapper>
                 <Title>{title}</Title>
                 <Wrapper>
@@ -85,18 +121,21 @@ class Section extends Component {
                         currentHover={displayHoveredItem(this.props.allItems, this.props.currentHover)}
                         openModal={this.openModal}
                         handleClick={this.handleClick}
-                        handleAddToLocalStorage={this.handleAddToLocalStorage}
-                        // active={toggleOrderActivity(this.props.allItems)}
                         />
                     <Selection 
                         pathname={pathname} 
                         handleMouseEnter={this.handleMouseEnter}
-                        items={getCurrentItems(this.props.allItems, this.props.category)}
+                        // items={getCurrentItems(this.props.allItems, this.props.category)}
+                        items={this.state.displayedItems}
                         />
                 </Wrapper>
             </SectionWrapper>
+            </React.Fragment>
         );
     }
+}
+const search = (state, value) => {
+    return state.filter(item => item.name.includes(value))
 }
 
 // define method to filter items by category
