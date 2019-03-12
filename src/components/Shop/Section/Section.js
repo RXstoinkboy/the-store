@@ -26,12 +26,16 @@ class Section extends Component {
         this.props.hoverItemToDisplay(e.target.id);
     }
 
-    handleClick =()=> {
-        // const itemToAdd = this.props.allItems.find(item => item.id === this.props.currentHover);
-        // this.props.addItemToCart(itemToAdd);
-        // console.log(itemToAdd);
-        this.props.addItemToCart(this.props.currentHover);
-    
+    handleClick = async () => {
+        await this.props.addItemToCart(this.props.currentHover);
+        await this.handleAddToLocalStorage();
+    }
+
+    handleAddToLocalStorage =()=>{
+        let addToLocalStorage = this.props.allItems.filter(item => 
+            item.inCart === true
+            );
+        localStorage.setItem('inCart', JSON.stringify(addToLocalStorage))
     }
 
     openModal =()=>{
@@ -48,7 +52,7 @@ class Section extends Component {
         // set initial rendered item in each section
         if(pathname === '/shop/boots' && this.props.currentHover !== 'blackBoots'){
             this.props.hoverItemToDisplay('blackBoots');
-        } else if (pathname === '/shop/sneakers' && this.props.currentHover !== 'blackSneakers'){
+        }else if (pathname === '/shop/sneakers' && this.props.currentHover !== 'blackSneakers'){
             this.props.hoverItemToDisplay('blackSneakers');
         }else if (pathname === '/shop/bags' && this.props.currentHover !== 'brownBag'){
             this.props.hoverItemToDisplay('brownBag');
@@ -89,6 +93,7 @@ class Section extends Component {
                         currentHover={displayHoveredItem(this.props.allItems, this.props.currentHover)}
                         openModal={this.openModal}
                         handleClick={this.handleClick}
+                        handleAddToLocalStorage={this.handleAddToLocalStorage}
                         // active={toggleOrderActivity(this.props.allItems)}
                         />
                     <Selection 
@@ -111,16 +116,6 @@ const getCurrentItems = (state, category) => {
 const displayHoveredItem = (state, id) => {
     return state.find(item => item.id === id)
 }
-
-// const toggleOrderActivity = (state, id) => {
-//     const tempItem = state.find(item => item.id === id);
-//     const index = state.indexOf(tempItem);
-//     if(state.index.inCart && state.index.id === this.props.currentHover){
-//         return false;
-//     } else {
-//         return true;
-//     }
-// }
 
 const mapStateToProps = state => {
     return {

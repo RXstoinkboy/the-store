@@ -23,7 +23,7 @@ const PosedContainer = posed.div({
         x: 0
     },
     hover: {
-        filter: 'brightness(1.15)',
+        filter: 'brightness(1.10)',
         x: -5
     }
 })

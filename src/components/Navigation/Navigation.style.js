@@ -6,16 +6,16 @@ const PosedWrapper = posed.div({
         x: '-90%',
         transition: {
             type: 'spring',
-            stiffness: 300,
-            damping: 35
+            stiffness: 80,
+            damping: 25
         },
     },
     open:{
         x: '0',
         transition: {
             type: 'spring',
-            stiffness: 300,
-            damping: 30
+            stiffness: 80,
+            damping: 25
         },
     }
 })
@@ -69,7 +69,7 @@ export const Button = styled(PosedButton)`
     width: 5vw;
     border: none;
     background: white;
-    box-shadow: 0 0 .3rem hsla(0deg, 0%, 90%, 1);
+    box-shadow: none;
     transition: all .3s ease;
     display: flex;
     flex-flow: column nowrap;
@@ -95,8 +95,8 @@ export const Button = styled(PosedButton)`
 
 export const Bar = styled.div`
     width: 3vw;
-    height: 6px;
-    border-radius: 3px;
+    height: 4px;
+    border-radius: 1px;
     margin: 4px;
     background: black;
 
@@ -156,12 +156,18 @@ const PosedMediaWrapper = posed.div({
         rotate: -90,
         x: '46vw',
         originX: '0%',
-        bottom: '0rem'
+        bottom: '0rem',
+        transition: {
+            duration: 500
+        }
     },  
     open: {
         rotate: 0,
         x: '10vw',
-        bottom: '4rem'
+        bottom: '4rem',
+        transition: {
+            duration: 500
+        }
     }
 })
 export const MediaWrapper = styled(PosedMediaWrapper)`

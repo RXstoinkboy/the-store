@@ -1,4 +1,9 @@
-import {ADD_ITEM, DECREASE_AMOUNT, INCREASE_AMOUNT, REMOVE_FROM_CART} from '../actions/types';
+import {
+    ADD_ITEM, 
+    DECREASE_AMOUNT, 
+    INCREASE_AMOUNT, 
+    REMOVE_FROM_CART, 
+    LOAD_LOCAL_STORAGE} from '../actions/types';
 import bags from './shopItems/bags';
 import heels from './shopItems/heels';
 import boots from './shopItems/boots';
@@ -47,6 +52,9 @@ export const allShopItems = (state = allItems, action) => {
                     ordered: 0}
                 
                 : item);
+
+        case LOAD_LOCAL_STORAGE:
+            return Object.assign({}, {val: action.obj})
 
         default:
             return state
