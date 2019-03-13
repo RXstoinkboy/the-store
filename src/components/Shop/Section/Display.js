@@ -3,20 +3,25 @@ import {Wrapper, Img, Button, Controls, Text, Info, MoreInfo, Details} from './D
 import {Link} from 'react-router-dom'
 import Modal from './Modal.js';
 import PropTypes from 'prop-types';
+import {PoseGroup} from 'react-pose';
 
 const Display = props => {
-    const modal = props.modalOpened 
-        ? <Modal 
-            openModal={props.openModal}
-            name={props.currentHover.name}
-            description={props.currentHover.description}/> 
-        : null;
-
     return (
         <Wrapper color={props.currentHover.color}>
             <Img src={props.currentHover.img} />
             <Details>
-                {modal}
+                {/* {modal} */}
+                <PoseGroup>
+                    {/* have to pass {...props} in order to make animation from PoseGroup to fire */}
+                    {props.modalOpened && [
+                        <Modal 
+                            {...props}
+                            key='modal'
+                            openModal={props.openModal}
+                            name={props.currentHover.name}
+                            description={props.currentHover.description}/> 
+                    ]}
+                </PoseGroup>
                 <Info>
                     <Text>{props.currentHover.name}</Text>
                     <Text>${props.currentHover.price}</Text>

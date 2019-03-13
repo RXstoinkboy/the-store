@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 
 const Modal =props=> {
     return (
-        <Shade>
+        // have to pass {...props} in order to make animation from PoseGroup to fire
+        <Shade {...props}>
             <ModalDiv style={{fontFamily: "'PT Sans Narrow', sans-serif"}}>
                 <Text style={{marginBottom: '1rem', fontFamily: "'Kaushan Script', cursive"}}>{props.name}</Text>                
                 {props.description}

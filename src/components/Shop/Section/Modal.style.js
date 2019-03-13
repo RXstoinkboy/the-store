@@ -1,7 +1,35 @@
 import styled from 'styled-components';
+import posed from 'react-pose';
 import {Button} from './Display.style';
 
-export const Shade = styled.div`
+const PosedShade = posed.div({
+    enter: { 
+        opacity: 1 
+    },
+    exit: { 
+        opacity: 0 
+    }
+})
+const PosedModalDiv = posed.div({
+    enter: { 
+        y: 0, 
+        opacity: 1,
+        delay: 100,
+        transition: {
+            y: {
+                type: 'spring',
+                stiffness: 600,
+                damping: 22
+            }
+        }
+    },
+    exit: { 
+        y: 200, 
+        opacity: 0,
+    }
+})
+
+export const Shade = styled(PosedShade)`
     position: fixed;
     top: 0;
     left: 5vw;
@@ -18,7 +46,8 @@ export const Shade = styled.div`
     }
 `
 
-export const ModalDiv = styled.div`
+
+export const ModalDiv = styled(PosedModalDiv)`
     position: absolute;
     display: grid;
     max-width: 500px;

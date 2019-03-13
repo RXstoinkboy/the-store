@@ -12,6 +12,7 @@ import {connect} from 'react-redux';
 import {addItemToCart} from '../../../actions/addItemToCart';
 import {hoverItemToDisplay} from '../../../actions/hoverItemToDisplay';
 import {displayCurrentCategory} from '../../../actions/displayCurrentCategory';
+import {PoseGroup} from 'react-pose';
 
 import PropTypes from 'prop-types';
 
@@ -110,7 +111,6 @@ class Section extends Component {
         
         return (
             <React.Fragment>
-
             <Settings text={text} handleChange={this.handleChange}/>
             <SectionWrapper>
                 <Title>{title}</Title>
@@ -122,12 +122,15 @@ class Section extends Component {
                         openModal={this.openModal}
                         handleClick={this.handleClick}
                         />
-                    <Selection 
-                        pathname={pathname} 
-                        handleMouseEnter={this.handleMouseEnter}
-                        // items={getCurrentItems(this.props.allItems, this.props.category)}
-                        items={this.state.displayedItems}
-                        />
+                        <PoseGroup>
+                            <Selection 
+                                {...this.props}
+                                pathname={pathname} 
+                                handleMouseEnter={this.handleMouseEnter}
+                                items={this.state.displayedItems}
+                                key={this.props.category}
+                                />
+                        </PoseGroup>
                 </Wrapper>
             </SectionWrapper>
             </React.Fragment>

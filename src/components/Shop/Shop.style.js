@@ -1,8 +1,19 @@
 import styled from 'styled-components';
 import posed from 'react-pose';
 
-export const ShopWrapper = styled.div`
+const PosedShopWrapper = posed.div({
+    enter:{
+        opacity: 1,
+        staggerChildren: 50
+    },
+    exit: {
+        opacity: 0,
+    }
+});
+
+export const ShopWrapper = styled(PosedShopWrapper)`
     background: linear-gradient(135deg, hsla(222, 50%, 80%, .3), hsla(100, 50%, 80%, .4));
+    overflow: hidden;
 `
 
 export const Wrapper = styled.div`
@@ -28,7 +39,9 @@ const PosedContainer = posed.div({
     },
     hover: {
         filter: 'brightness(1.15)'
-    }
+    },
+    enter: {x: 0},
+    exit: {x: 200}
 })
 
 export const Container = styled(PosedContainer)`

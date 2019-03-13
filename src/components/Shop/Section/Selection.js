@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const Selection = props => {
     const {items, handleMouseEnter} = props;
     return (
-        <Wrapper columns={items.length}>
+        <Wrapper columns={items.length} {...props}>
             {
                 items.map(item => {
                     return (

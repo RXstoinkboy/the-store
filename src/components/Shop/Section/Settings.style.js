@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
     background: var(--mainWhite);
     border-radius: 25px;
     transition: all .5s ease-out;
+    cursor: pointer;
 
     &:hover{
         width: 80vw;

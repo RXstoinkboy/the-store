@@ -1,7 +1,20 @@
 import styled from 'styled-components';
 import posed from 'react-pose';
 
-export const Wrapper = styled.div`
+export const PosedSelectionWrapper = posed.div({
+    enter: {
+        opacity: 1,
+        staggerChildren: 50,
+        delayChildren: 100,
+        beforeChildren: true
+
+    },
+    exit: {
+        opacity: 0
+    }
+})
+
+export const Wrapper = styled(PosedSelectionWrapper)`
     grid-column: 2/-1;
     display: grid;
     grid-template-columns: 1fr;
@@ -25,7 +38,9 @@ const PosedContainer = posed.div({
     hover: {
         filter: 'brightness(1.07)',
         x: -5
-    }
+    },
+    enter: {x: 0},
+    exit: {x: 200}
 })
 
 export const Container = styled(PosedContainer)`
