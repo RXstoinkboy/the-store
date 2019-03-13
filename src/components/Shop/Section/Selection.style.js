@@ -5,12 +5,11 @@ export const PosedSelectionWrapper = posed.div({
     enter: {
         opacity: 1,
         staggerChildren: 50,
-        delayChildren: 100,
-        beforeChildren: true
-
+        beforeChildren: true,
+        delayChildren: 200,
     },
     exit: {
-        opacity: 0
+        opacity: 1
     }
 })
 
@@ -40,7 +39,7 @@ const PosedContainer = posed.div({
         x: -5
     },
     enter: {x: 0},
-    exit: {x: 200}
+    exit: {x: 100}
 })
 
 export const Container = styled(PosedContainer)`

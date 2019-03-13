@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import posed from 'react-pose';
-import { hsla } from 'style-value-types';
 
 export const Wrapper = styled.div`
     grid-column: 1/2;
@@ -36,7 +35,15 @@ export const Controls = styled.div`
     align-items: center;
 `
 
-export const Button = styled.button`
+const PosedButton = posed.button({
+    pressable: true,
+    hoverable: true,
+    init: {scale: 1},
+    press: {scale: 0.9},
+    hover: {scale: 1.05}
+})
+
+export const Button = styled(PosedButton)`
     margin: ${props => props.left ? '0 .5rem 0 0' : '0 0 0 .5rem'};
     padding: 10px;
     border-radius: 3px;

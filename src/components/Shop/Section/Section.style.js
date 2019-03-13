@@ -1,6 +1,12 @@
 import styled from 'styled-components';
+import posed from 'react-pose';
 
-export const SectionWrapper = styled.div`
+const PosedSectionWrapper = posed.div({
+    enter: {opacity: 1},
+    exit: {opacity: 0}
+})
+
+export const SectionWrapper = styled(PosedSectionWrapper)`
     max-height: 100vh;
     margin: 0;
     background: linear-gradient(135deg, hsla(222, 50%, 80%, .3), hsla(100, 50%, 80%, .4));
