@@ -13,7 +13,11 @@ const PosedShopWrapper = posed.div({
 
 export const ShopWrapper = styled(PosedShopWrapper)`
     background: linear-gradient(135deg, hsla(222, 50%, 80%, .3), hsla(100, 50%, 80%, .4));
-    overflow-y: hidden;
+    overflow: hidden;
+
+    @media all and (max-width: 850px){
+        overflow: visible;
+    }
 `
 
 export const Wrapper = styled.div`

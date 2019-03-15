@@ -11,11 +11,16 @@ export const Wrapper = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-gap: 10px;
+    overflow: hidden;
+
+    @media all and (max-width: 850px){
+        overflow: visible;
+    }
 
     @media all and (max-width: 500px){
         padding: 10px 10px 10px 11vw;
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, minmax(300px, 1fr));
+        grid-template-rows: repeat(4, minmax(250px, 1fr));
     }
 `
 
@@ -50,6 +55,10 @@ export const Title = styled(MockTitle)`
         color: transparent;
         text-shadow: none;
     }
+
+    @media all and (max-width: 850px){
+        font-size: 2rem;
+    }
 `
 
 export const Text = styled.p`
@@ -83,6 +92,10 @@ export const Text = styled.p`
             height: 100vh;
         }
     }
+    @media all and (max-width: 850px){
+        font-size: .8rem;
+    }
+
 `
 
 export const Img = styled.img`
