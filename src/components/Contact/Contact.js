@@ -4,6 +4,12 @@ import {Wrapper} from './Contact.style';
 import ContactForm from './ContactForm';
 import ContactInfo from './ContactInfo';
 
+const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
+
 class Contact extends Component {
     constructor(props){
         super(props);
@@ -21,6 +27,20 @@ class Contact extends Component {
         this.setState({
             [name]: value
         })
+    }
+
+    handleSubmit =e=> {
+        fetch('/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: encode({ "form-name": "contactForm", ...this.state })
+        })
+        .then(()=>alert('Success!'))
+        .catch(error => alert(error));
+
+        e.preventDefault()
     }
     render() {
         return(

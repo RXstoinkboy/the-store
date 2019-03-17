@@ -7,9 +7,7 @@ const ContactForm = props => {
         <Wrapper>
                 <Title>Fill the form to contact us:</Title>
                 <Form 
-                    name='contactForm' 
-                    data-netlify="true" 
-                    method='POST'
+                    onSubmit={props.handleSubmit}
                     >
                     <Name>
                         Please enter your name:
