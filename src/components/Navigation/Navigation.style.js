@@ -23,7 +23,8 @@ const PosedWrapper = posed.div({
 export const Wrapper = styled(PosedWrapper)`
     position: fixed;
     top: 0;
-    height: 100%;
+    height: 100vh;
+    bottom: 0;
     left: 0;
     width: 50%;
     z-index: 100;

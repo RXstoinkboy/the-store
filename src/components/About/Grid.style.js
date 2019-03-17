@@ -43,12 +43,17 @@ export const Tile = styled.div`
         box-shadow: 0px 0px 7px grey;
         transform: translateY(-1px) scale(1.002);
     }
+
+    &:focus{
+        background: none;
+    }
 `
 export const Title = styled(MockTitle)`
     font-size: 3rem;
     padding: 0;
     height: auto;
     z-index: 5;
+    user-select: none;
     transition: all .3s ease-out;
 
     ${Tile}:hover > &{
@@ -68,6 +73,7 @@ export const Text = styled.p`
     font-family: 'Lato';
     text-align: center;
     color: transparent;
+    user-select: none;
     transition: all .3s ease-out;
 
     ${Tile}:hover > & {
@@ -88,7 +94,7 @@ export const Text = styled.p`
         transition: all .4s ease-out;
 
         ${Tile}:hover > & {
-            width: 100vw;
+            width: 100vh;
             height: 100vh;
         }
     }
@@ -117,7 +123,7 @@ export const Img = styled.img`
 `
 
 export const Boom = styled.div`
-width: 100px;
+    width: 100px;
     height: 100px;
     object-fit: contain;
     position: absolute;
@@ -132,7 +138,7 @@ width: 100px;
     
     ${Tile}:hover > & {
         opacity: 1;
-        width: 100vw;
+        width: 100vh;
         height: 100vh;
     }
 `
