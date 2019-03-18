@@ -26,7 +26,8 @@ class Contact extends Component {
         const value = e.target.value;
         this.setState({
             [name]: value
-        })
+        },()=>{localStorage.setItem('contactForm', JSON.stringify(this.state))});
+        // keep currently written data in local storage. Just for comfort
     }
 
     handleSubmit =e=> {
@@ -38,9 +39,39 @@ class Contact extends Component {
             body: encode({ "form-name": "contactForm", ...this.state })
         })
         .then(()=>alert('Success!'))
+        .then(()=>{
+            // clear local storage after submiting form
+            localStorage.removeItem('contactForm');
+
+            this.setState({
+                name: '',
+                lastName: '',
+                mail: '',
+                message: ''
+        })
+        })
         .catch(error => alert(error));
         
+        
+
         e.preventDefault()
+    }
+
+    componentDidMount(){
+        if(localStorage.getItem('contactForm')){
+            const localState = JSON.parse(localStorage.getItem('contactForm'));
+            const name = localState.name;
+            const lastName = localState.lastName;
+            const mail = localState.mail;
+            const message = localState.message;
+            
+            this.setState({
+                name,
+                lastName,
+                mail,
+                message
+            })
+        }
     }
 
     render() {
