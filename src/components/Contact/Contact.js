@@ -39,9 +39,10 @@ class Contact extends Component {
         })
         .then(()=>alert('Success!'))
         .catch(error => alert(error));
-
+        
         e.preventDefault()
     }
+
     render() {
         return(
             <React.Fragment>
@@ -49,6 +50,7 @@ class Contact extends Component {
                 <Wrapper>
                     <ContactForm
                         {...this.state}
+                        handleSubmit={this.handleSubmit}
                         handleChange={this.handleChange} />
                     <ContactInfo />
                 </Wrapper>
