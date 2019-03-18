@@ -2,28 +2,45 @@ import React, { Component } from 'react';
 import {ShopWrapper as CartWrapper, Title} from '../Shop/Shop.style';
 import Item from './Item';
 import {Wrapper, Total, PurchaseButton} from './Cart.style';
+import OrderForm from './OrderForm/OrderForm';
 import PropTypes from 'prop-types';
 
 import {connect} from 'react-redux';
 
-import {decreaseAmount} from '../../actions/decreaseAmount'
-import {increaseAmount} from '../../actions/increaseAmount'
-import {removeItemFromCart} from '../../actions/removeItemFromCart'
+import {decreaseAmount} from '../../actions/decreaseAmount';
+import {increaseAmount} from '../../actions/increaseAmount';
+import {removeItemFromCart} from '../../actions/removeItemFromCart';
 
 class Cart extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            orderForm: true
+        }
+    }
+
+    // control amount of items in cart
     handleDecreaseAmount =(e)=>{
         this.props.decreaseAmount(e.target.id)
     }
+
     handleIncreaseAmount =(e)=>{
         this.props.increaseAmount(e.target.id)
     }
+
     handleRemoveItemFromCart =(e)=>{
         this.props.removeItemFromCart(e.target.id)
     }
+
+
     render() {
         return (
             <CartWrapper>
                 <Title>Cart</Title>
+                    {/* order form modal dispalyed after clicking to order */}
+                    {
+                        this.state.orderForm ? <OrderForm /> : null
+                    }
                     <Wrapper>
                         {this.props.allItems.map(item => {
                             if (item.inCart === true){
