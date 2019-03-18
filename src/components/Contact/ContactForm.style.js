@@ -23,6 +23,7 @@ export const Title = styled.h2`
     padding: .5rem;
     margin: .5rem;
     font-size: 2.5rem;
+    font-family: 'PT Sans Narrow';
 `
 
 export const Input = styled.input`
@@ -41,7 +42,7 @@ export const Name = styled.label`
     padding: .5rem;
     margin: .5rem;
     font-weight: bold;
-    flex-flow: 'Lato';
+    font-family: 'PT Sans Narrow';
     font-size: .7rem;
 
     @media all and (max-width: 500px){
