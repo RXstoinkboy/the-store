@@ -1,18 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
-import {Button as MockButton} from '../../Shop/Section/Display.style';
+import {Button} from '../../Shop/Section/Display.style';
 
 const Buttons = props => {
     return (
-        <div>
-            <Button onClick={props.handleClose}>back to cart</Button>
+        <div style={{gridColumn: '1/-1', display:'flex', justifyContent:'flex-end', alignItems: 'center'}}>
+            <Button onClick={props.handleClose} active>back to cart</Button>
             <Button>PayPal</Button>
         </div>
     );
 };
 
 export default Buttons;
-
-const Button = styled(MockButton)`
-    grid-column: 1/-1;
-`
