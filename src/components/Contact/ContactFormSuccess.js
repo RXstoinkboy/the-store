@@ -20,21 +20,18 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     background: linear-gradient(60deg, white, hsl(0, 0%, 70%));
-
-    @media all and (max-width: 500px){
-        padding: 0 0 0 10vh;
-    }
 `
 
 const TextPrimary = styled.h1`
-    font-size: 20vh;
+    font-size: 7vh;
     font-family: 'Kaushan Script';
-    margin-bottom: 1rem;
+    text-align: center;
 `
 
 const TextSecondary = styled.h3`
     font-family: 'PT Sans Narrow';
-    font-size: 10vh;
+    font-size: 2vh;
+    text-align: center;
 `
 
 export default ContactFormSuccess;

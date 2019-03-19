@@ -38,7 +38,7 @@ class Contact extends Component {
             },
             body: encode({ "form-name": "contactForm", ...this.state })
         })
-        .then(()=>alert('Success!'))
+        .then(()=>console.log('Success!'))
         .then(()=>{
             // clear local storage after submiting form
             localStorage.removeItem('contactForm');
@@ -51,8 +51,6 @@ class Contact extends Component {
         })
         })
         .catch(error => alert(error));
-        
-        
 
         e.preventDefault()
     }

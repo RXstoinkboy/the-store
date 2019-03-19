@@ -1,13 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Form from './Form';
+import {Shade, Wrapper, Title} from './OrderForm.style';
 
-class OrderForm extends Component {
-    render() {
-        return (
-            <div>
-                hello from order form
-            </div>
-        );
-    }
+const OrderForm =props=> {
+    return (
+        <Shade>
+            <Wrapper>
+                <Title>Fill the form to complete your order:</Title>
+                <Form {...props}/>
+            </Wrapper>
+        </Shade>
+    );
+    
 }
 
 export default OrderForm;

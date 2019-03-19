@@ -31,16 +31,20 @@ class Cart extends Component {
     handleRemoveItemFromCart =(e)=>{
         this.props.removeItemFromCart(e.target.id)
     }
+    handleClose = (e) => {
+        this.setState({
+            orderForm: !this.state.orderForm
+        })   
+        e.preventDefault();
+    }
 
 
     render() {
         return (
             <CartWrapper>
                 <Title>Cart</Title>
-                    {/* order form modal dispalyed after clicking to order */}
-                    {
-                        this.state.orderForm ? <OrderForm /> : null
-                    }
+                    {/* order form modal displayed after clicking to order */}
+                    {this.state.orderForm ? <OrderForm handleClose={this.handleClose} /> : null}
                     <Wrapper>
                         {this.props.allItems.map(item => {
                             if (item.inCart === true){
@@ -66,7 +70,7 @@ class Cart extends Component {
                                 ${totalAmount(this.props.allItems)}
                             </span>
                         </Total>
-                        <PurchaseButton active>BUY NOW</PurchaseButton>
+                        <PurchaseButton active onClick={this.handleClose}>BUY NOW</PurchaseButton>
                     </Wrapper>
             </CartWrapper>
         );

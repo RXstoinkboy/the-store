@@ -28,10 +28,10 @@ class About extends Component {
         ]
 
         return (
-            <React.Fragment>
+            <div style={{width: '100%', height: '100%'}}>
                 <Title>about</Title>
                 <Grid colors={colors} texts={texts} titles={titles}/>
-            </React.Fragment>
+            </div>
         );
     }
 }

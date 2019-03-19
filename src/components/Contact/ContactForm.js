@@ -8,6 +8,7 @@ const ContactForm = props => {
                 <Title>Fill the form to contact us:</Title>
                 <Form 
                     onSubmit={props.handleSubmit}
+                    action='/contact/success'
                     >
                     <Name>
                         Please enter your name:
