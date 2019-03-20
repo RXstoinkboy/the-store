@@ -1,8 +1,7 @@
 import {HANDLE_SUBMIT} from './types';
 
-export const handleSubmit = (items) => {
+export const handleSubmit = () => {
     return {
-        type: HANDLE_SUBMIT,
-        items
+        type: HANDLE_SUBMIT
     }
 }

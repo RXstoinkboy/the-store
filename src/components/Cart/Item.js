@@ -24,7 +24,7 @@ const Item = props => {
                                 ? handleDecreaseAmount 
                                 : handleRemoveItemFromCart
                             }>-</Less>
-                <Amount value={item.ordered} />
+                <Amount value={item.ordered} readOnly/>
                 <More
                     id={item.id} 
                     onClick={handleIncreaseAmount}>+</More>

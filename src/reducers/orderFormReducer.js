@@ -1,9 +1,10 @@
 import {
     HANDLE_INPUT,
-    HANDLE_SUBMIT
+    HANDLE_SUBMIT,
+    UPDATE_ORDERED_ITEMS
 } from '../actions/types';
 
-const initialState = {
+const initialData = {
     name: '',
     lastName: '',
     email: '',
@@ -14,31 +15,29 @@ const initialState = {
     orderedItems: [],
 }
 
-export const orderFormReducer = (state = initialState, action) => {
+export const orderFormReducer = (state = initialData, action) => {
     switch (action.type){
         case HANDLE_INPUT:
-            
-                    if (action.inputType === 'name'){
-                        return Object.assign({}, state, {name: action.value});
-                    } else if (action.inputType === 'lastName'){
-                        return Object.assign({}, state, {lastName: action.value});
-                    } else if (action.inputType === 'email'){
-                        return Object.assign({}, state, {email: action.value});
-                    } else if (action.inputType === 'phone'){
-                        return Object.assign({}, state, {phone: action.value});
-                    } else if (action.inputType === 'address'){
-                        return Object.assign({}, state, {address: action.value});
-                    } else if (action.inputType === 'postal'){
-                        return Object.assign({}, state, {postal: action.value});
-                    } else if (action.inputType === 'city'){
-                        return Object.assign({}, state, {city: action.value});
-                    }
-                ;
+                if (action.inputType === 'name'){
+                    return Object.assign({}, state, {name: action.value});
+                } else if (action.inputType === 'lastName'){
+                    return Object.assign({}, state, {lastName: action.value});
+                } else if (action.inputType === 'email'){
+                    return Object.assign({}, state, {email: action.value});
+                } else if (action.inputType === 'phone'){
+                    return Object.assign({}, state, {phone: action.value});
+                } else if (action.inputType === 'address'){
+                    return Object.assign({}, state, {address: action.value});
+                } else if (action.inputType === 'postal'){
+                    return Object.assign({}, state, {postal: action.value});
+                } else if (action.inputType === 'city'){
+                    return Object.assign({}, state, {city: action.value});
+                }
+            ;
+        case UPDATE_ORDERED_ITEMS:
+            return Object.assign({}, state, {orderedItems: [...action.items]});
         case HANDLE_SUBMIT:
-        // TODO clear data if eveything was correctly sent
-            return Object.assign({}, state, 
-                    {orderedItems: action.items}
-                );
+            return Object.assign({}, initialData);
         default:
             return state
     }

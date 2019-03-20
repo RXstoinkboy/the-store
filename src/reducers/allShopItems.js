@@ -3,6 +3,7 @@ import {
     DECREASE_AMOUNT, 
     INCREASE_AMOUNT, 
     REMOVE_FROM_CART,
+    HANDLE_SUBMIT
 } from '../actions/types';
 import bags from './shopItems/bags';
 import heels from './shopItems/heels';
@@ -53,9 +54,15 @@ export const allShopItems = (state = allItems, action) => {
                 
                 : item);
 
-        // case LOAD_LOCAL_STORAGE:
-        //     return Object.assign({}, {val: action.obj})
-
+        case HANDLE_SUBMIT:
+            return state.map(item => 
+                item.inCart 
+                ? {...item,
+                    inCart: false,
+                    ordered: 0}
+                
+                : item);
+                
         default:
             return state
     }

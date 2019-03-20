@@ -84,7 +84,7 @@ class Cart extends Component {
     }
 }
 
-const totalAmount = (state) => {
+export const totalAmount = (state) => {
     let total = 0;
     state.forEach(item => {
         if(item.inCart === true){

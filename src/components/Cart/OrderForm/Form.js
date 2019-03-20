@@ -16,7 +16,7 @@ const Form =props => {
                     placeholder='e.g. John'
                     pattern='[A-Za-z]{1,32}'
                     onChange={props.handleChange}
-                    value={props.name}
+                    value={props.orderFormReducer.name}
                 />
             </Name>
             <LastName>
@@ -28,7 +28,7 @@ const Form =props => {
                     pattern='[A-Za-z]{1,32}'
                     placeholder='e.g. Smith'
                     onChange={props.handleChange}
-                    value={props.lastName}
+                    value={props.orderFormReducer.lastName}
                 />
             </LastName>
             <Mail>
@@ -40,7 +40,7 @@ const Form =props => {
                     placeholder='e.g. john.smith@mail.xyz'
                     pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
                     onChange={props.handleChange}
-                    value={props.email}
+                    value={props.orderFormReducer.email}
                 />
             </Mail>
             <Phone>
@@ -52,7 +52,7 @@ const Form =props => {
                     placeholder='e.g. 123456789'
                     pattern='^\d{9}$'
                     onChange={props.handleChange}
-                    value={props.phone}
+                    value={props.orderFormReducer.phone}
                 />
             </Phone>
             <Street>
@@ -63,7 +63,7 @@ const Form =props => {
                     name='address'
                     placeholder='e.g. 711-2880 Nulla St'
                     onChange={props.handleChange}
-                    value={props.address}
+                    value={props.orderFormReducer.address}
                 />
             </Street>
             <Postal>
@@ -75,7 +75,7 @@ const Form =props => {
                     placeholder='e.g. 96522'
                     pattern='^\d{5}$'
                     onChange={props.handleChange}
-                    value={props.postal}
+                    value={props.orderFormReducer.postal}
                 />
             </Postal>
             <City>
@@ -86,7 +86,7 @@ const Form =props => {
                     name='city'
                     placeholder='e.g. Mankato Mississippi'
                     onChange={props.handleChange}
-                    value={props.city}
+                    value={props.orderFormReducer.city}
                 />
             </City>
             <Buttons {...props}/>
