@@ -6,7 +6,9 @@ import Buttons from './Buttons';
 
 const Form =props => {
     return (
-        <FormWrapper>
+        <FormWrapper
+            onSubmit={props.handleFormSubmit}
+        >
             <Name>
                 First name:
                 <Input
@@ -89,7 +91,8 @@ const Form =props => {
                     value={props.orderFormReducer.city}
                 />
             </City>
-            <Buttons {...props}/>
+            <Buttons 
+                {...props}/>
         </FormWrapper>
     );
 };

@@ -8,12 +8,12 @@ const OrderedItems = props => {
             Order summary:
             <List>
                 {props.orderFormReducer.orderedItems.map(item=>{
-                    return <Item>
+                    return <Item key={item}>
                         {`${item.ordered} x ${item.name}: ${item.ordered} x $${item.price}`}
                     </Item>
                 })}
-                {`TOTAL: $${totalAmount(props.orderFormReducer.orderedItems)}`}
             </List>
+            {`TOTAL: $${totalAmount(props.orderFormReducer.orderedItems)}`}
         </Wrapper>
     );
 };

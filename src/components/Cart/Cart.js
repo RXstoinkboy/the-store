@@ -15,7 +15,7 @@ class Cart extends Component {
     constructor(props){
         super(props);
         this.state = {
-            orderForm: true
+            orderForm: false
         }
     }
 
@@ -77,7 +77,13 @@ class Cart extends Component {
                                 ${totalAmount(this.props.allItems)}
                             </span>
                         </Total>
-                        <PurchaseButton active onClick={this.handleClose}>BUY NOW</PurchaseButton>
+                        <PurchaseButton 
+                            active={!totalAmount(this.props.allItems) ? false : true}
+                            disabled={!totalAmount(this.props.allItems) ? true : false}
+                            onClick={this.handleClose}
+                        >
+                            BUY NOW
+                        </PurchaseButton>
                     </Wrapper>
             </CartWrapper>
         );

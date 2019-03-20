@@ -5,7 +5,7 @@ const Buttons = props => {
     return (
         <div style={{gridColumn: '1/-1', display:'flex', justifyContent:'flex-end', alignItems: 'center'}}>
             <Button onClick={props.handleClose} active>back to cart</Button>
-            <Button onClick={props.handleSubmit}>PayPal</Button>
+            <Button type='submit'>PayPal</Button>
         </div>
     );
 };

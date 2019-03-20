@@ -16,6 +16,15 @@ class OrderForm extends Component {
         this.props.handleInput(e.target.value, e.target.name);
     }
 
+    handleFormSubmit =e=> {
+        if(e.target.checkValidity()){
+            console.log('message sent')
+            this.props.handleSubmit();
+        }
+        
+        e.preventDefault();
+    }
+
     componentDidMount(){
         const orderedItems = this.props.allShopItems.filter(item => item.inCart);
         this.props.updateOrderedItems(orderedItems);
@@ -26,7 +35,11 @@ class OrderForm extends Component {
             <Shade>
                 <Wrapper>
                     <Title>Fill the form to complete your order:</Title>
-                    <Form {...this.props} handleChange={this.handleChange} localState={this.localState}/>
+                    <Form 
+                        {...this.props} 
+                        handleFormSubmit={this.handleFormSubmit}
+                        handleChange={this.handleChange} 
+                        localState={this.localState}/>
                     <OrderedItems {...this.props}/>
                 </Wrapper>
             </Shade>

@@ -31,26 +31,28 @@ class Contact extends Component {
     }
 
     handleSubmit =e=> {
-        fetch('/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: encode({ "form-name": "contactForm", ...this.state })
-        })
-        .then(()=>console.log('Success!'))
-        .then(()=>{
-            // clear local storage after submiting form
-            localStorage.removeItem('contactForm');
-
-            this.setState({
-                name: '',
-                lastName: '',
-                mail: '',
-                message: ''
-        })
-        })
-        .catch(error => alert(error));
+        if(e.target.checkValidity()){
+            fetch('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: encode({ "form-name": "contactForm", ...this.state })
+            })
+            .then(()=>console.log('Success!'))
+            .then(()=>{
+                // clear local storage after submiting form
+                localStorage.removeItem('contactForm');
+    
+                this.setState({
+                    name: '',
+                    lastName: '',
+                    mail: '',
+                    message: ''
+            })
+            })
+            .catch(error => alert(error));
+        }
 
         e.preventDefault()
     }
