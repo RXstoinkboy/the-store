@@ -8,6 +8,7 @@ const OrderForm =props=> {
             <Wrapper>
                 <Title>Fill the form to complete your order:</Title>
                 <Form {...props}/>
+                {/* <OrderedItems /> */}
             </Wrapper>
         </Shade>
     );

@@ -44,7 +44,14 @@ class Cart extends Component {
             <CartWrapper>
                 <Title>Cart</Title>
                     {/* order form modal displayed after clicking to order */}
-                    {this.state.orderForm ? <OrderForm handleClose={this.handleClose} /> : null}
+                    {this.state.orderForm 
+                        ? <OrderForm 
+                        // {...this.props}
+                        handleClose={this.handleClose}
+                         /> 
+                        : null}
+
+                    {/* in cart items */}
                     <Wrapper>
                         {this.props.allItems.map(item => {
                             if (item.inCart === true){

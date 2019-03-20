@@ -9,31 +9,85 @@ const Form =props => {
         <FormWrapper>
             <Name>
                 First name:
-                <Input />
+                <Input
+                    required
+                    type='text'
+                    name='name'
+                    placeholder='e.g. John'
+                    pattern='[A-Za-z]{1,32}'
+                    onChange={props.handleChange}
+                    value={props.name}
+                />
             </Name>
             <LastName>
                 Last name:
-                <Input />
+                <Input 
+                    required
+                    type='text'
+                    name='lastName'
+                    pattern='[A-Za-z]{1,32}'
+                    placeholder='e.g. Smith'
+                    onChange={props.handleChange}
+                    value={props.lastName}
+                />
             </LastName>
             <Mail>
                 e-mail:
-                <Input />
+                <Input 
+                    required
+                    type='email'
+                    name='email'
+                    placeholder='e.g. john.smith@mail.xyz'
+                    pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                    onChange={props.handleChange}
+                    value={props.email}
+                />
             </Mail>
             <Phone>
                 Phone:
-                <Input />
+                <Input 
+                    required
+                    type='text'
+                    name='phone'
+                    placeholder='e.g. 123456789'
+                    pattern='^\d{9}$'
+                    onChange={props.handleChange}
+                    value={props.phone}
+                />
             </Phone>
             <Street>
-                Street:
-                <Input />
+                Address:
+                <Input 
+                    required
+                    type='text'
+                    name='address'
+                    placeholder='e.g. 711-2880 Nulla St'
+                    onChange={props.handleChange}
+                    value={props.address}
+                />
             </Street>
             <Postal>
-                POST code:
-                <Input />
+                Postal code:
+                <Input 
+                    required
+                    type='text'
+                    name='postal'
+                    placeholder='e.g. 96522'
+                    pattern='^\d{5}$'
+                    onChange={props.handleChange}
+                    value={props.postal}
+                />
             </Postal>
             <City>
                 City:
-                <Input />
+                <Input 
+                    required
+                    type='text'
+                    name='city'
+                    placeholder='e.g. Mankato Mississippi'
+                    onChange={props.handleChange}
+                    value={props.city}
+                />
             </City>
             <Buttons {...props}/>
         </FormWrapper>

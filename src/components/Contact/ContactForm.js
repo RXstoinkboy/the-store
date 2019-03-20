@@ -16,6 +16,7 @@ const ContactForm = props => {
                             type='text'
                             name='name'
                             placeholder='e.g. John'
+                            required
                             onChange={props.handleChange}
                             value={props.name} />
                     </Name>
@@ -25,6 +26,7 @@ const ContactForm = props => {
                             type='text'
                             name='lastName'
                             placeholder='e.g. Smith'
+                            required
                             onChange={props.handleChange}
                             value={props.lastName} />
                     </LastName>
@@ -34,6 +36,8 @@ const ContactForm = props => {
                             type='email'
                             name='mail'
                             placeholder='example@email.com'
+                            pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                            required
                             onChange={props.handleChange}
                             value={props.mail} />
                     </Mail>
@@ -43,6 +47,7 @@ const ContactForm = props => {
                             type='text'
                             name='message'
                             placeholder='Please enter your message here'
+                            required
                             onChange={props.handleChange}
                             value={props.message} />
                     </Message>

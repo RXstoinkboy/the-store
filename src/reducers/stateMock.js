@@ -6,5 +6,8 @@ const stateMock =
         {item3}
     ],
     currentCategory: '',
-    currentlyHoveredItem: ''
+    currentlyHoveredItem: '',
+
+    orderFormReducer: {},
+    orderHistory: [{},{},{}] //action: HANDLE_SUBMIT
 }
