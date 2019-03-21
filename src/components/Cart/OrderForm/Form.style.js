@@ -4,7 +4,7 @@ import {Name as MockName} from '../../Contact/ContactForm.style';
 export const FormWrapper = styled.form`
     max-width: 90vw;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: ${props => !props.paymentScreen ? '1fr 1fr' : '1fr'};
 
     @media all and (max-width: 500px){
         grid-template-columns: 1fr;

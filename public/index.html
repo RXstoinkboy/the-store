@@ -24,12 +24,26 @@
 </head>
 
 <body>
+
+  <!-- CONTACT FORM -->
   <form name="contactForm" netlify netlify-honeypot="bot-field" action='/contact/success' hidden>
       <input type="text" name="name" />
       <input type="text" name="lastName" />
       <input type="email" name="mail" />
       <input type='text' name="message" />
-    </form>
+  </form>
+
+  <!-- ORDER FORM -->
+  <form name="the-store_OrderForm" netlify netlify-honeypot="bot-field" action='/contact/success' hidden>
+    <input type="text" name="name" />
+    <input type="text" name="lastName" />
+    <input type="email" name="email" />
+    <input type='text' name="phone" />
+    <input type='text' name="address" />
+    <input type='text' name="postal" />
+    <input type='text' name="city" />
+  </form>
+
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>

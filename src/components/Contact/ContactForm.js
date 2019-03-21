@@ -9,6 +9,7 @@ const ContactForm = props => {
                 <Form 
                     onSubmit={props.handleSubmit}
                     action='/contact/success'
+                    name='contactForm'
                     >
                     <Name>
                         Please enter your name:

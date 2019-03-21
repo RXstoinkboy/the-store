@@ -15,7 +15,8 @@ class Cart extends Component {
     constructor(props){
         super(props);
         this.state = {
-            orderForm: false
+            orderForm: false,
+            paymentScreen: false
         }
     }
 
@@ -37,6 +38,15 @@ class Cart extends Component {
         })   
         e.preventDefault();
     }
+    handlePaymentScreen =e=> {
+        if(e.target.closest('form').checkValidity()){
+            this.setState({
+                paymentScreen: !this.state.paymentScreen
+            })
+        }
+        
+        e.preventDefault();
+    }
 
 
     render() {
@@ -46,8 +56,10 @@ class Cart extends Component {
                     {/* order form modal displayed after clicking to order */}
                     {this.state.orderForm 
                         ? <OrderForm 
-                        // {...this.props}
+                        {...this.props}
+                        {...this.state}
                         handleClose={this.handleClose}
+                        handlePaymentScreen={this.handlePaymentScreen}
                          /> 
                         : null}
 

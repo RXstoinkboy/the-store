@@ -9,6 +9,11 @@ import {handleInput} from '../../../actions/handleInput';
 import {handleSubmit} from '../../../actions/handleSubmit';
 import {updateOrderedItems} from '../../../actions/updateOrderedItems';
 
+const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
 
 class OrderForm extends Component {
 
@@ -18,9 +23,23 @@ class OrderForm extends Component {
 
     handleFormSubmit =e=> {
         if(e.target.checkValidity()){
-            console.log('message sent')
-            this.props.handleSubmit();
+            fetch('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: encode({ "form-name": "the-store_OrderForm", ...this.props })
+            })
+            .then(()=>console.log('Success!'))
+            .then(()=>{
+                // run handleSubmit method in Redux
+                this.props.handleSubmit();
+            })
+            .catch(error => alert(error));
         }
+
+        console.log('message sent');
+        
         
         e.preventDefault();
     }
@@ -34,7 +53,14 @@ class OrderForm extends Component {
         return (
             <Shade>
                 <Wrapper>
-                    <Title>Fill the form to complete your order:</Title>
+                    <Title>
+                        {
+                            !this.props.paymentScreen
+                                ? 'Fill the form to complete your order:'
+                                : 'Please proceed with payment to complete order:'
+                        }
+                        
+                    </Title>
                     <Form 
                         {...this.props} 
                         handleFormSubmit={this.handleFormSubmit}
