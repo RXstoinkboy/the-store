@@ -19,6 +19,7 @@
     "lodash": "^4.17.11",
     "react": "16.8.3",
     "react-dom": "16.8.3",
+    "react-paypal-express-checkout": "^1.0.5",
     "react-pose": "^4.0.7",
     "react-redux": "5.1.1",
     "react-router": "4.3.1",

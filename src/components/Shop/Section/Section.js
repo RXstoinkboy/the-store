@@ -138,7 +138,7 @@ class Section extends Component {
     }
 }
 const search = (state, value) => {
-    return state.filter(item => item.name.includes(value))
+    return state.filter(item => item.name.includes(value.toLowerCase()))
 }
 
 // define method to filter items by category
