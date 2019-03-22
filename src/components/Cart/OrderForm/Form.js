@@ -10,6 +10,7 @@ const Form =props => {
         <React.Fragment>
             {/* render paypal button only if data was filled in correctly */}
             <FormWrapper
+                id='orderForm'
                 onSubmit={props.handleFormSubmit}
                 paymentScreen={props.paymentScreen}
                 action='/'

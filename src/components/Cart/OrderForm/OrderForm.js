@@ -22,7 +22,9 @@ class OrderForm extends Component {
     }
 
     handleFormSubmit =e=> {
-        if(e.target.checkValidity()){
+        // console.log(document.getElementById('orderForm'));
+        const orderForm = document.getElementById('orderForm');
+        if(orderForm.checkValidity()){
             fetch('/', {
                 method: 'POST',
                 headers: {
@@ -41,7 +43,7 @@ class OrderForm extends Component {
         console.log('message sent');
         
         
-        e.preventDefault();
+        // orderForm.preventDefault();
     }
 
     componentDidMount(){

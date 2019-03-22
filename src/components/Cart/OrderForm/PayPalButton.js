@@ -5,8 +5,6 @@ import {totalAmount} from '../Cart';
  
 export default class MyApp extends React.Component {
     render() {
-        // data from the form
-        const {address, city, postal, name, lastName, phone, orderedItems} = this.props.orderFormReducer;
         
         const onSuccess = (payment) => {
             // Congratulation, it came here means everything's fine!
