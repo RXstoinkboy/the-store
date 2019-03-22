@@ -12,7 +12,7 @@ const Form =props => {
             <FormWrapper
                 onSubmit={props.handleFormSubmit}
                 paymentScreen={props.paymentScreen}
-                action='/contact/success'
+                action='/'
                 name='the-store_OrderForm'
             >
             {

@@ -12,12 +12,12 @@ export default class MyApp extends React.Component {
             // Congratulation, it came here means everything's fine!
             		console.log("The payment was succeeded!", payment);
             		// You can bind the "payment" object's value to your state or props or whatever here, please see below for sample returned data
+                    this.props.handleFormSubmit();
         }
  
         const onCancel = (data) => {
             // User pressed "cancel" or close Paypal's popup!
             console.log('The payment was cancelled!', data);
-            this.props.handleFormSubmit();
             // You can bind the "data" object's value to your state or props or whatever here, please see below for sample returned data
         }
  
@@ -33,22 +33,10 @@ export default class MyApp extends React.Component {
         // let total = 1; // same as above, this is the total amount (based on currency) to be paid by using Paypal express checkout
         // Document on Paypal's currency code: https://developer.paypal.com/docs/classic/api/currency_codes/
         
-        let shipping = 2;
+        let shipping = 1;
 
         // additional options
-        const paymentOptions = {
-            transactions: [{
-                shipping_address: {
-                    recipient_name: `${name} ${lastName}`,
-                    line1: `${address}`,
-                    city: `${city}`,
-                    postal_code: `${postal}`,
-                    phone: `${phone}`
-                  },
-                item_list: orderedItems,
-                note_to_payer: 'Please contact us for any details'
-            }]
-        }
+        
 
         const style = {
             size: 'responsive',
@@ -59,7 +47,7 @@ export default class MyApp extends React.Component {
         }
 
         const client = {
-            sandbox:    'AZ4CT72jZY10fePbcKwnvuc_3Pwgb3kNlvmMGeLuqKm7sEBGXPimYxROP0tUbuBRcl_qpmQXYH29Bosl',
+            sandbox: 'AZ4CT72jZY10fePbcKwnvuc_3Pwgb3kNlvmMGeLuqKm7sEBGXPimYxROP0tUbuBRcl_qpmQXYH29Bosl',
             production: 'YOUR-PRODUCTION-APP-ID',
         }
         // In order to get production's app-ID, you will have to send your app to Paypal for approval first
@@ -80,7 +68,6 @@ export default class MyApp extends React.Component {
                 onError={onError} 
                 onSuccess={onSuccess} 
                 onCancel={onCancel} 
-                paymentOptions={paymentOptions}
             />
         );
     }
