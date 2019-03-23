@@ -16,6 +16,7 @@ const Cart = React.lazy(()=> import('./Cart/Cart'));
 const Contact = React.lazy(()=> import('./Contact/Contact'));
 const Section = React.lazy(()=> import('./Shop/Section/Section'));
 const ContactFormSuccess = React.lazy(()=> import('./Contact/ContactFormSuccess'));
+const OrderFormSuccess = React.lazy(()=> import('./Cart/OrderForm/OrderFormSuccess'));
 
 const RoutesContainer = posed.div({
     enter:{
@@ -45,6 +46,7 @@ class App extends Component {
                                         <Route exact path='/contact' render={(props)=><Contact {...props}/>} key='4'/>
                                         <Route exact path='/shop/:section' render={(props)=> <Section {...props} />} key='5'/>
                                         <Route exact path='/contact/success' render={(props)=> <ContactFormSuccess {...props} />} key='6' />
+                                        <Route exact path='/cart/success' render={(props)=> <OrderFormSuccess {...props} />} key='7' />
                                     </Switch>
                                 </RoutesContainer>
                             </PoseGroup>

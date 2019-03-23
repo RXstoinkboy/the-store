@@ -4,40 +4,48 @@ self.__precacheManifest = [
     "url": "/static/media/redBag.8fc440d2.png"
   },
   {
-    "revision": "a44600cf362a63a7bdff",
+    "revision": "2a4cd4be1d782afb0130",
     "url": "/static/css/main.24f61dbc.chunk.css"
   },
   {
-    "revision": "71e98621a5728b9bf302",
-    "url": "/static/js/runtime~main.71e98621.js"
+    "revision": "5a2083d07b591ccbbece",
+    "url": "/static/js/runtime~main.5a2083d0.js"
   },
   {
-    "revision": "15a048612159a46e90a49dad9a8401be",
-    "url": "/static/media/shoppingCart.15a04861.png"
+    "revision": "7768d5b7fd47e94f2168f933ff31adfa",
+    "url": "/static/media/location.7768d5b7.png"
   },
   {
-    "revision": "5ab46cbbff013ad631e3",
-    "url": "/static/js/2.5ab46cbb.chunk.js"
+    "revision": "68f63c6b1db955f05bd0",
+    "url": "/static/js/2.68f63c6b.chunk.js"
   },
   {
-    "revision": "42672bf662333072a5b9",
-    "url": "/static/js/3.42672bf6.chunk.js"
+    "revision": "a3de3688dea912ef0cda",
+    "url": "/static/js/3.a3de3688.chunk.js"
   },
   {
-    "revision": "2f738a3093bda8567201",
-    "url": "/static/js/4.2f738a30.chunk.js"
+    "revision": "b6dff4b2ef633135acbc",
+    "url": "/static/js/4.b6dff4b2.chunk.js"
   },
   {
-    "revision": "a0bd02a240d170fe7132",
-    "url": "/static/js/5.a0bd02a2.chunk.js"
+    "revision": "7f5fb80c4539a6cddb84",
+    "url": "/static/js/5.7f5fb80c.chunk.js"
   },
   {
-    "revision": "6059284e8e8c65e6284a",
-    "url": "/static/js/6.6059284e.chunk.js"
+    "revision": "a1e595113ac0f143c57e",
+    "url": "/static/js/6.a1e59511.chunk.js"
   },
   {
-    "revision": "798f484cd8493c71da41",
-    "url": "/static/js/7.798f484c.chunk.js"
+    "revision": "7dc733cc4c7ce63e035e",
+    "url": "/static/js/7.7dc733cc.chunk.js"
+  },
+  {
+    "revision": "ebd4a1d89be2c926939e",
+    "url": "/static/js/8.ebd4a1d8.chunk.js"
+  },
+  {
+    "revision": "b8f5b30f5e7716f33942",
+    "url": "/static/js/9.b8f5b30f.chunk.js"
   },
   {
     "revision": "6097087405f52adbe187fc090f3bb0b6",
@@ -72,8 +80,8 @@ self.__precacheManifest = [
     "url": "/static/media/LVbag.b4db8810.png"
   },
   {
-    "revision": "a44600cf362a63a7bdff",
-    "url": "/static/js/main.a44600cf.chunk.js"
+    "revision": "2a4cd4be1d782afb0130",
+    "url": "/static/js/main.2a4cd4be.chunk.js"
   },
   {
     "revision": "13aadd5d66edf1732083c41f4c49a974",
@@ -140,11 +148,15 @@ self.__precacheManifest = [
     "url": "/static/media/logo.6be65533.png"
   },
   {
-    "revision": "5ab46cbbff013ad631e3",
+    "revision": "15a048612159a46e90a49dad9a8401be",
+    "url": "/static/media/shoppingCart.15a04861.png"
+  },
+  {
+    "revision": "68f63c6b1db955f05bd0",
     "url": "/static/css/2.ee6ee6c4.chunk.css"
   },
   {
-    "revision": "7f929ba55c5cb9744f618c4e54d40bb2",
+    "revision": "88898be8e2a10d839586e83e71cdc185",
     "url": "/index.html"
   }
 ];

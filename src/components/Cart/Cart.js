@@ -11,7 +11,7 @@ import {decreaseAmount} from '../../actions/decreaseAmount';
 import {increaseAmount} from '../../actions/increaseAmount';
 import {removeItemFromCart} from '../../actions/removeItemFromCart';
 
-import posed, {PoseGroup} from 'react-pose';
+import {PoseGroup} from 'react-pose';
 
 class Cart extends Component {
     constructor(props){

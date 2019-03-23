@@ -2,8 +2,10 @@ import React from 'react';
 import {Wrapper, Img, Button, Controls, Text, Info, MoreInfo, Details} from './Display.style';
 import {Link} from 'react-router-dom'
 import Modal from './Modal.js';
-import PropTypes from 'prop-types';
+
 import {PoseGroup} from 'react-pose';
+
+import PropTypes from 'prop-types';
 
 const Display = props => {
     return (

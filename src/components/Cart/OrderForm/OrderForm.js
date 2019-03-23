@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Form from './Form';
 import {Shade, Wrapper, Title} from './OrderForm.style';
 import OrderedItems from './OrderedItems';
+import {totalAmount} from '../Cart';
 
 import {connect} from 'react-redux';
 
@@ -24,11 +25,11 @@ class OrderForm extends Component {
     }
 
     handleFormSubmit =e=> {
-        // console.log(document.getElementById('orderForm'));
-        const {name, lastName, address, postal, city, email, phone, orderedItems} = this.props.orderFormReducer;
+        const {name, lastName, address, postal, city, email, phone, orderedItems: orderedItemsArr} = this.props.orderFormReducer;
         
+        const total = totalAmount(this.props.orderFormReducer.orderedItems);
         // by this time I will be sending ordered items list as a string
-        const orderedItemsString = JSON.stringify(orderedItems);
+        const orderedItems = JSON.stringify(orderedItemsArr);
 
         const orderForm = document.getElementById('orderForm');
         if(orderForm.checkValidity()){
@@ -37,7 +38,7 @@ class OrderForm extends Component {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
-                body: encode({ "form-name": "the-store_OrderForm", name, lastName, address, postal, city, email, phone, orderedItemsString })
+                body: encode({ "form-name": "the-store_OrderForm", name, lastName, address, postal, city, email, phone, total, orderedItems })
             })
             .then(()=>console.log('Success!'))
             .then(()=>{

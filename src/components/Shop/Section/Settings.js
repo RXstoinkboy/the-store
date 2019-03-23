@@ -3,6 +3,8 @@ import {Wrapper, SearchInput, Icon, FilterIcon} from './Settings.style';
 
 import {connect} from 'react-redux';
 
+import PropTypes from 'prop-types';
+
 class Settings extends React.Component {
     render(){
         return (
@@ -37,3 +39,10 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, null)(Settings);
+
+Settings.propTypes = {
+    allItems: PropTypes.array.isRequired,
+    currentCategory: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    handleChange: PropTypes.func.isRequired
+}
