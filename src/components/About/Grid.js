@@ -4,6 +4,8 @@ import shoppingCart from '../../images/shoppingCart.png';
 import location from '../../images/location.png';
 import {Link} from 'react-router-dom';
 
+import PropTypes from 'prop-types'; 
+
 const Grid = props => {
     return (
         <Wrapper>
@@ -49,3 +51,9 @@ const Grid = props => {
 };
 
 export default Grid;
+
+Grid.propTypes = {
+    titles: PropTypes.array.isRequired,
+    colors: PropTypes.array.isRequired,
+    texts: PropTypes.array.isRequired
+}

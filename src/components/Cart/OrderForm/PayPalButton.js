@@ -2,6 +2,8 @@ import React from 'react';
 import PaypalExpressBtn from 'react-paypal-express-checkout';
 
 import {totalAmount} from '../Cart';
+
+import PropTypes from 'prop-types';
  
 export default class MyApp extends React.Component {
     render() {
@@ -69,4 +71,8 @@ export default class MyApp extends React.Component {
             />
         );
     }
+}
+
+MyApp.propTypes = {
+    handleFormSubmit: PropTypes.func.isRequired,
 }

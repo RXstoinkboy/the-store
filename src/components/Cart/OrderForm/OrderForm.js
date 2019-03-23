@@ -9,6 +9,8 @@ import {handleInput} from '../../../actions/handleInput';
 import {handleSubmit} from '../../../actions/handleSubmit';
 import {updateOrderedItems} from '../../../actions/updateOrderedItems';
 
+import PropTypes from 'prop-types';
+
 const encode = (data) => {
     return Object.keys(data)
         .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -94,3 +96,13 @@ const mapDispatchToProps = {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(OrderForm);
+
+OrderForm.propTypes = {
+    handleInput: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    orderFormReducer: PropTypes.object.isRequired,
+    allShopItems: PropTypes.array.isRequired,
+    updateOrderedItems: PropTypes.func.isRequired,
+    paymentScreen: PropTypes.bool.isRequired
+
+}

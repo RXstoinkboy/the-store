@@ -136,5 +136,8 @@ const mapDispatchToProps = {
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);
 
 Cart.propTypes = {
-    allItems: PropTypes.array.isRequired
+    allItems: PropTypes.array.isRequired,
+    decreaseAmount: PropTypes.func.isRequired,
+    increaseAmount: PropTypes.func.isRequired,
+    removeItemFromCart: PropTypes.func.isRequired,
 }

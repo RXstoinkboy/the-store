@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button} from '../../Shop/Section/Display.style';
 
+import PropTypes from 'prop-types';
 
 const Buttons = props => {
     return (
@@ -22,3 +23,8 @@ const Buttons = props => {
 };
 
 export default Buttons;
+
+Buttons.propTypes = {
+    handleClose: PropTypes.func.isRequired,
+    handlePaymentScreen: PropTypes.func.isRequired
+}

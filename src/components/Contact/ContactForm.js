@@ -2,6 +2,8 @@ import React from 'react';
 import {Wrapper, Title, Form, Input, Name, LastName, Mail, Message} from './ContactForm.style.js';
 import {Button} from '../Shop/Section/Display.style';
 
+import PropTypes from 'prop-types';
+
 const ContactForm = props => {
     return (
         <Wrapper>
@@ -69,3 +71,12 @@ const ContactForm = props => {
 };
 
 export default ContactForm;
+
+ContactForm.propTypes = {
+    handleSubmit: PropTypes.func.isRequired,
+    handleChange: PropTypes.func.isRequired,
+    name: PropTypes.string.isRequired,
+    lastName: PropTypes.string.isRequired,
+    mail: PropTypes.string.isRequired,
+    message: PropTypes.string.isRequired,
+}

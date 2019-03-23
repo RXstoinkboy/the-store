@@ -4,6 +4,8 @@ import {Name, LastName,Mail,Street,Postal, City,Phone, FormWrapper} from './Form
 import PayPalButton from './PayPalButton';
 import {totalAmount} from '../Cart';
 
+import PropTypes from 'prop-types';
+
 import Buttons from './Buttons';
 
 const Form =props => {
@@ -221,3 +223,12 @@ const Form =props => {
 };
 
 export default Form;
+
+Form.propTypes = {
+    handleClose: PropTypes.func.isRequired,
+    handleChange: PropTypes.func.isRequired,
+    handlePaymentScreen: PropTypes.func.isRequired,
+    handleFormSubmit: PropTypes.func.isRequired,
+    paymentScreen: PropTypes.bool.isRequired,
+    orderFormReducer: PropTypes.object.isRequired,
+}

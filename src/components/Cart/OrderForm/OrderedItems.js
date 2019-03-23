@@ -2,6 +2,8 @@ import React from 'react';
 import {totalAmount} from '../Cart';
 import {Wrapper, List, Item} from './OrderedItems.style.js';
 
+import PropTypes from 'prop-types';
+
 const OrderedItems = props => {
     return (
         <Wrapper>
@@ -19,3 +21,7 @@ const OrderedItems = props => {
 };
 
 export default OrderedItems;
+
+OrderedItems.propTypes = {
+    orderFormReducer: PropTypes.object.isRequired
+}
