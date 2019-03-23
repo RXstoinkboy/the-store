@@ -21,12 +21,27 @@ export const ItemWrapper = styled.div`
         grid-template-rows: 1fr 2fr;
     }
 `
-export const MiniatureWrapper = styled.div`
+const PosedMiniatureWrapper = posed.div({
+    hoverable: true,
+    init:{
+        boxShadow: '0 0 15px hsla(0, 0%, 50%, .4), 0 5px 10px hsla(0, 0%, 30%, .6)',
+        filter: 'brightness(1)',
+        y: 0,
+        scale: 1
+    },
+    hover:{
+        boxShadow: '0 0 10px hsla(0, 0%, 50%, .4), 0 7px 8px hsla(0, 0%, 30%, .6)',
+        filter: 'brightness(1.2)',
+        y: -2,
+        scale: 1.02
+    }
+})
+
+export const MiniatureWrapper = styled(PosedMiniatureWrapper)`
     width: 100px;
     height: 100px;
     border-radius: 50%;
     background: ${props => props.color};
-    box-shadow: 0 0 15px hsla(0, 0%, 50%, .4), 0 5px 10px hsla(0, 0%, 30%, .6);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -147,9 +162,12 @@ export const SubTotal = styled(Name)`
 `
 
 export const Delete = styled.svg`
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: .5rem;
+    border-radius: 50%;
     cursor: pointer;
+    transition: all .3s ease;
 
     @media all and (max-width: 800px){
         grid-row: 1/3;
@@ -161,5 +179,9 @@ export const Delete = styled.svg`
         grid-row: 1/2;
         grid-column: -2/-1;
         align-self: center;
+    }
+
+    &:hover{
+        background: var(--mainWhite);
     }
 `

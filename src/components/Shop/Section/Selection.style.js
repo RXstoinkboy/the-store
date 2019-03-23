@@ -31,11 +31,11 @@ export const Wrapper = styled(PosedSelectionWrapper)`
 const PosedContainer = posed.div({
     hoverable: true,
     init: {
-        filter: 'brightness(1)',
+        filter: 'saturate(0.6) grayscale(0.5)',
         x: 0
     },
     hover: {
-        filter: 'brightness(1.07)',
+        filter: 'saturate(1.1) grayscale(0)',
         x: -5
     },
     enter: {x: 0},
@@ -68,6 +68,7 @@ export const Container = styled(PosedContainer)`
         max-height: 250px;
         grid-template-rows: 1fr;
         margin: 5px;
+        min-height: 90px;
         &:first-child{
             margin: 0 5px 5px 5px;
         }
@@ -81,6 +82,7 @@ export const Container = styled(PosedContainer)`
         width: 40vw;
         grid-template-rows: 1fr 4fr 1fr;
         margin: 5px;
+        min-height: 150px;
 
         &:first-child{
             margin: 5px 5px 5px 0;

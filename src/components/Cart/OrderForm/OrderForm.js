@@ -23,6 +23,11 @@ class OrderForm extends Component {
 
     handleFormSubmit =e=> {
         // console.log(document.getElementById('orderForm'));
+        const {name, lastName, address, postal, city, email, phone, orderedItems} = this.props.orderFormReducer;
+        
+        // by this time I will be sending ordered items list as a string
+        const orderedItemsString = JSON.stringify(orderedItems);
+
         const orderForm = document.getElementById('orderForm');
         if(orderForm.checkValidity()){
             fetch('/', {
@@ -30,18 +35,17 @@ class OrderForm extends Component {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
-                body: encode({ "form-name": "the-store_OrderForm", ...this.props })
+                body: encode({ "form-name": "the-store_OrderForm", name, lastName, address, postal, city, email, phone, orderedItemsString })
             })
             .then(()=>console.log('Success!'))
             .then(()=>{
-                // run handleSubmit method in Redux
+                // run handleSubmit method in Redux which should clear the cart
                 this.props.handleSubmit();
             })
             .catch(error => alert(error));
         }
 
         console.log('message sent');
-        
         
         // orderForm.preventDefault();
     }
@@ -53,9 +57,9 @@ class OrderForm extends Component {
 
     render(){
         return (
-            <Shade>
-                <Wrapper>
-                    <Title>
+            <Shade key='orderFormShade' {...this.props}>
+                <Wrapper key='orderFormWrapper'>
+                    <Title key='orderFormTitle'>
                         {
                             !this.props.paymentScreen
                                 ? 'Fill the form to complete your order:'
@@ -63,7 +67,7 @@ class OrderForm extends Component {
                         }
                         
                     </Title>
-                    <Form 
+                    <Form key='orderFormForm'
                         {...this.props} 
                         handleFormSubmit={this.handleFormSubmit}
                         handleChange={this.handleChange} 

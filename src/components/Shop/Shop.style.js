@@ -80,7 +80,7 @@ export const Title = styled.h1`
     text-align: center;
     text-transform: capitalize;
     margin: 0;
-    z-index: 10;
+    z-index: 20;
     font-family: 'Kaushan Script', cursive;
     
     @media all and (max-width: 450px){

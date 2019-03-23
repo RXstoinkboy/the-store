@@ -24,7 +24,7 @@ const PosedModalDiv = posed.div({
         }
     },
     exit: { 
-        y: 200, 
+        y: -200, 
         opacity: 0,
     }
 })

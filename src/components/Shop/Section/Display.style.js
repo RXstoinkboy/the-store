@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
     align-items: center;
     overflow: hidden;
     height: 100%;
+    min-height: 200px;
     padding-bottom: 1rem;
 
     @media all and (orientation: portrait) and (max-width: 450px){

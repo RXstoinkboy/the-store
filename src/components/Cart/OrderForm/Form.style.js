@@ -14,6 +14,7 @@ export const FormWrapper = styled.form`
 
 export const Name = styled(MockName)`
     grid-column: 1/2;
+    /* display: ${props => !props.paymentScreen ? 'flex' : 'none'}; */
 `
 
 export const LastName = styled(Name)`

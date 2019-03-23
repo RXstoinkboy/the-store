@@ -2,10 +2,12 @@ import React from 'react';
 import {Input} from '../../Contact/ContactForm.style';
 import {Name, LastName,Mail,Street,Postal, City,Phone, FormWrapper} from './Form.style';
 import PayPalButton from './PayPalButton';
+import {totalAmount} from '../Cart';
 
 import Buttons from './Buttons';
 
 const Form =props => {
+    const displayInputs = !props.paymentScreen ? {display: "flex"} : {display: "none"};
     return (
         <React.Fragment>
             {/* render paypal button only if data was filled in correctly */}
@@ -18,11 +20,10 @@ const Form =props => {
             >
             {
                 props.paymentScreen
-                    ? <PayPalButton {...props} type='submit'>PayPal</PayPalButton>
-                    : null
+                    && <PayPalButton key='payPalButton' {...props} type='submit'>PayPal</PayPalButton>
             }
-                    
-                <Name hidden={props.paymentScreen}>
+            
+                <Name style={displayInputs}>
                     First name:
                     <Input
                         required
@@ -34,7 +35,7 @@ const Form =props => {
                         value={props.orderFormReducer.name}
                     />
                 </Name>
-                <LastName hidden={props.paymentScreen}>
+                <LastName style={displayInputs}>
                     Last name:
                     <Input 
                         required
@@ -46,7 +47,7 @@ const Form =props => {
                         value={props.orderFormReducer.lastName}
                     />
                 </LastName>
-                <Mail hidden={props.paymentScreen}>
+                <Mail style={displayInputs}>
                     e-mail:
                     <Input 
                         required
@@ -58,7 +59,7 @@ const Form =props => {
                         value={props.orderFormReducer.email}
                     />
                 </Mail>
-                <Phone hidden={props.paymentScreen}>
+                <Phone style={displayInputs}>
                     Phone:
                     <Input 
                         required
@@ -70,7 +71,7 @@ const Form =props => {
                         value={props.orderFormReducer.phone}
                     />
                 </Phone>
-                <Street hidden={props.paymentScreen}>
+                <Street style={displayInputs}>
                     Address:
                     <Input 
                         required
@@ -81,7 +82,7 @@ const Form =props => {
                         value={props.orderFormReducer.address}
                     />
                 </Street>
-                <Postal hidden={props.paymentScreen}>
+                <Postal style={displayInputs}>
                     Postal code:
                     <Input 
                         required
@@ -93,7 +94,7 @@ const Form =props => {
                         value={props.orderFormReducer.postal}
                     />
                 </Postal>
-                <City hidden={props.paymentScreen}>
+                <City style={displayInputs}>
                     City:
                     <Input 
                         required
@@ -104,6 +105,22 @@ const Form =props => {
                         value={props.orderFormReducer.city}
                     />
                 </City>
+                {/* data about the order */}
+                    <input 
+                        style={{display: 'none'}}
+                        readOnly
+                        type='number'
+                        name='total'
+                        value={totalAmount(props.orderFormReducer.orderedItems)}
+                    />
+                    <input 
+                        style={{display: 'none'}}
+                        readOnly
+                        type='text'
+                        name='orderedItems'
+                        value={JSON.stringify(props.orderFormReducer.orderedItems)}
+                    />
+                
 
 
                 {/* {props.paymentScreen

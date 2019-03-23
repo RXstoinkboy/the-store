@@ -13,7 +13,7 @@ const Selection = props => {
                         <Container 
                             height='30vh' 
                             color={item.color} 
-                            onMouseEnter={handleMouseEnter}
+                            onClick={handleMouseEnter}
                             id={item.id}
                             key={item.id}
                             

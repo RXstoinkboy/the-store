@@ -11,6 +11,8 @@ import {decreaseAmount} from '../../actions/decreaseAmount';
 import {increaseAmount} from '../../actions/increaseAmount';
 import {removeItemFromCart} from '../../actions/removeItemFromCart';
 
+import posed, {PoseGroup} from 'react-pose';
+
 class Cart extends Component {
     constructor(props){
         super(props);
@@ -36,6 +38,7 @@ class Cart extends Component {
         this.setState({
             orderForm: !this.state.orderForm
         })   
+        console.log('open modal');
         e.preventDefault();
     }
     handlePaymentScreen =e=> {
@@ -54,14 +57,20 @@ class Cart extends Component {
             <CartWrapper>
                 <Title>Cart</Title>
                     {/* order form modal displayed after clicking to order */}
-                    {this.state.orderForm 
-                        ? <OrderForm 
-                        {...this.props}
-                        {...this.state}
-                        handleClose={this.handleClose}
-                        handlePaymentScreen={this.handlePaymentScreen}
-                         /> 
-                        : null}
+                    <PoseGroup>
+                        {   
+                            this.state.orderForm 
+                            && [
+                                <OrderForm 
+                                    key='orderFormModal'
+                                    {...this.props}
+                                    {...this.state}
+                                    handleClose={this.handleClose}
+                                    handlePaymentScreen={this.handlePaymentScreen}
+                                />
+                            ]
+                        }
+                    </PoseGroup>
 
                     {/* in cart items */}
                     <Wrapper>

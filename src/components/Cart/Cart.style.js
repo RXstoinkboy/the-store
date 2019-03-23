@@ -30,5 +30,5 @@ export const Total = styled.p`
 `
 
 export const PurchaseButton = styled(Button)`
-margin: 0 10vw 5vh auto;
+    margin: 0 10vw 5vh auto;
 `
