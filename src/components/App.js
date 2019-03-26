@@ -1,11 +1,6 @@
 import React, { Component, Suspense } from 'react';
 import {Fragment} from 'react';
 import {Switch, Route} from 'react-router-dom';
-// import About from './About/About';
-// import Shop from './Shop/Shop';
-// import Cart from './Cart/Cart';
-// import Contact from './Contact/Contact';
-// import Section from './Shop/Section/Section';
 import Navigation from './Navigation/Navigation';
 import Loader from './Loader/Loader';
 import posed, {PoseGroup} from 'react-pose';
