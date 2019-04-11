@@ -138,7 +138,7 @@ export const Boom = styled.div`
     
     ${Tile}:hover > & {
         opacity: 1;
-        width: 100vh;
-        height: 100vh;
+        width: 200vh;
+        height: 200vh;
     }
 `
