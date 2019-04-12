@@ -94,8 +94,8 @@ export const Text = styled.p`
         transition: all .4s ease-out;
 
         ${Tile}:hover > & {
-            width: 100vh;
-            height: 100vh;
+            width: 200vh;
+            height: 200vh;
         }
     }
     @media all and (max-width: 850px){
